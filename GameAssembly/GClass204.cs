@@ -1,0 +1,18 @@
+public class GClass204
+{
+	public sbyte sbyte_0;
+
+	public sbyte sbyte_1;
+
+	public sbyte sbyte_2;
+
+	public sbyte sbyte_3;
+
+	public int int_0;
+
+	public string string_0;
+
+	public GClass167 gclass167_0;
+
+	public sbyte sbyte_4;
+}

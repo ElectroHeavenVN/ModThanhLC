@@ -1,0 +1,91 @@
+using System.Runtime.InteropServices;
+using UnityEngine;
+
+public class GClass124
+{
+	public static string string_0;
+
+	public static string string_1;
+
+	[DllImport("__Internal")]
+	private static extern void _SMSsend(string string_2, string string_3, int int_0);
+
+	[DllImport("__Internal")]
+	private static extern int _unpause();
+
+	[DllImport("__Internal")]
+	private static extern int _checkRotation();
+
+	[DllImport("__Internal")]
+	private static extern int _back();
+
+	[DllImport("__Internal")]
+	private static extern int _Send();
+
+	[DllImport("__Internal")]
+	private static extern void _purchaseItem(string string_2, string string_3, string string_4);
+
+	public static int smethod_0()
+	{
+		if (Application.platform == RuntimePlatform.IPhonePlayer)
+			return smethod_1();
+		string_0 = GClass160.genum0_0.ToString();
+		if (string.Empty + string_0[2] == "h" && string_0.Length > 6)
+		{
+			string_1 = SystemInfo.operatingSystem.ToString();
+			string text = string.Empty + string_1[10];
+			if (text != "2" && text != "3")
+				return 0;
+			return 1;
+		}
+		GClass5.smethod_0(string_0 + "  loai");
+		if (string_0 == "Unknown" && GClass4.float_0 * GClass4.float_1 < 786432f)
+			return 0;
+		return -1;
+	}
+
+	public static int smethod_1()
+	{
+		if (GClass160.genum0_0 == GEnum0.const_3 || GClass160.genum0_0 == GEnum0.const_8 || GClass160.genum0_0 == GEnum0.const_11 || GClass160.genum0_0 == GEnum0.const_13)
+			return 0;
+		return -1;
+	}
+
+	public static void smethod_2(string phonenumber, string bodytext, int n)
+	{
+		if (Application.platform != 0)
+			_SMSsend(phonenumber, bodytext, n);
+	}
+
+	public static void smethod_3()
+	{
+		if (Application.platform != 0)
+			_back();
+	}
+
+	public static void smethod_4()
+	{
+		if (Application.platform != 0)
+			_Send();
+	}
+
+	public static int smethod_5()
+	{
+		if (Application.platform != 0)
+			return _unpause();
+		return 0;
+	}
+
+	public static int smethod_6()
+	{
+		if (Application.platform != 0)
+			return _checkRotation();
+		return 0;
+	}
+
+	public static void smethod_7(string itemID, string userName, string gameID)
+	{
+		if (Application.platform != 0)
+			_purchaseItem(itemID, userName, gameID);
+	}
+}
