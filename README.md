@@ -17,4 +17,4 @@ Hướng dẫn sử dụng được lưu tại thư mục [`Files`](Output/Files
 
 ---
 
-`NƠI ĐÂY ĐÉO PHẢI THIÊN ĐÌNH, XIN ĐỪNG ẢO TƯỞNG MÌNH LÀ THƯỢNG ĐẾ!!!`
+`NƠI ĐÂY ĐÉO PHẢI THIÊN ĐÌNH, XIN ĐỪNG ẢO TƯỞNG MÌNH LÀ THƯỢNG ĐẾ!!!` - ThanhLC
