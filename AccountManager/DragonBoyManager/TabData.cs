@@ -301,7 +301,7 @@ namespace DragonBoyManager
                 groupBox1.Text = "Account information";
                 checkBox3.Text = "HideUs";
                 label6.Text = "Height";
-                label5.Text = "Weight";
+                label5.Text = "Width";
                 label4.Text = "Note";
                 label3.Text = "Server";
                 checkBox2.Text = "HidePass";

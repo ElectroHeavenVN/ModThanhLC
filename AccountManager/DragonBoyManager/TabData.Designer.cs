@@ -104,17 +104,6 @@ namespace DragonBoyManager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.isLoginDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isUseProxyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ProxyInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeScreenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAccount = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -144,10 +133,21 @@ namespace DragonBoyManager
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Timer(this.components);
+            this.isLoginDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isUseProxyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ProxyInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeScreenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAccount = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -211,98 +211,6 @@ namespace DragonBoyManager
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // isLoginDataGridViewCheckBoxColumn
-            // 
-            this.isLoginDataGridViewCheckBoxColumn.DataPropertyName = "isLogin";
-            this.isLoginDataGridViewCheckBoxColumn.HeaderText = "X";
-            this.isLoginDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.isLoginDataGridViewCheckBoxColumn.Name = "isLoginDataGridViewCheckBoxColumn";
-            this.isLoginDataGridViewCheckBoxColumn.Width = 35;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Tài khoản";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // serverDataGridViewTextBoxColumn
-            // 
-            this.serverDataGridViewTextBoxColumn.DataPropertyName = "Server";
-            this.serverDataGridViewTextBoxColumn.HeaderText = "Server";
-            this.serverDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.serverDataGridViewTextBoxColumn.Name = "serverDataGridViewTextBoxColumn";
-            this.serverDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serverDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Ghi chú";
-            this.noteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            this.noteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.noteDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // isUseProxyDataGridViewCheckBoxColumn
-            // 
-            this.isUseProxyDataGridViewCheckBoxColumn.DataPropertyName = "isUseProxy";
-            this.isUseProxyDataGridViewCheckBoxColumn.HeaderText = "Proxy";
-            this.isUseProxyDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.isUseProxyDataGridViewCheckBoxColumn.Name = "isUseProxyDataGridViewCheckBoxColumn";
-            this.isUseProxyDataGridViewCheckBoxColumn.Width = 45;
-            // 
-            // ProxyInfo
-            // 
-            this.ProxyInfo.DataPropertyName = "ProxyInfo";
-            this.ProxyInfo.HeaderText = "Thông tin";
-            this.ProxyInfo.MinimumWidth = 6;
-            this.ProxyInfo.Name = "ProxyInfo";
-            this.ProxyInfo.ReadOnly = true;
-            this.ProxyInfo.Width = 180;
-            // 
-            // sizeScreenDataGridViewTextBoxColumn
-            // 
-            this.sizeScreenDataGridViewTextBoxColumn.DataPropertyName = "SizeScreen";
-            this.sizeScreenDataGridViewTextBoxColumn.HeaderText = "Kích thước";
-            this.sizeScreenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sizeScreenDataGridViewTextBoxColumn.Name = "sizeScreenDataGridViewTextBoxColumn";
-            this.sizeScreenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sizeScreenDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // dataAccount
-            // 
-            this.dataAccount.DataSource = typeof(DragonBoyManager.Account);
             // 
             // groupBox1
             // 
@@ -415,9 +323,12 @@ namespace DragonBoyManager
             "Vũ Trụ 10",
             "Vũ Trụ 11",
             "Vũ Trụ 12",
+            "Vũ Trụ 13",
             "Universe 1",
+            "Naga",
             "Võ đài liên vũ trụ",
-            "Super 1"});
+            "Super 1",
+            "Super 2"});
             this.comboBox1.Location = new System.Drawing.Point(10, 138);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(96, 29);
@@ -655,6 +566,98 @@ namespace DragonBoyManager
             this.update.Interval = 1000;
             this.update.Tick += new System.EventHandler(this.update_Tick);
             // 
+            // isLoginDataGridViewCheckBoxColumn
+            // 
+            this.isLoginDataGridViewCheckBoxColumn.DataPropertyName = "isLogin";
+            this.isLoginDataGridViewCheckBoxColumn.HeaderText = "X";
+            this.isLoginDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.isLoginDataGridViewCheckBoxColumn.Name = "isLoginDataGridViewCheckBoxColumn";
+            this.isLoginDataGridViewCheckBoxColumn.Width = 35;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Tài khoản";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // serverDataGridViewTextBoxColumn
+            // 
+            this.serverDataGridViewTextBoxColumn.DataPropertyName = "Server";
+            this.serverDataGridViewTextBoxColumn.HeaderText = "Server";
+            this.serverDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serverDataGridViewTextBoxColumn.Name = "serverDataGridViewTextBoxColumn";
+            this.serverDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serverDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Ghi chú";
+            this.noteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.noteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.noteDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // isUseProxyDataGridViewCheckBoxColumn
+            // 
+            this.isUseProxyDataGridViewCheckBoxColumn.DataPropertyName = "isUseProxy";
+            this.isUseProxyDataGridViewCheckBoxColumn.HeaderText = "Proxy";
+            this.isUseProxyDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.isUseProxyDataGridViewCheckBoxColumn.Name = "isUseProxyDataGridViewCheckBoxColumn";
+            this.isUseProxyDataGridViewCheckBoxColumn.Width = 45;
+            // 
+            // ProxyInfo
+            // 
+            this.ProxyInfo.DataPropertyName = "ProxyInfo";
+            this.ProxyInfo.HeaderText = "Thông tin";
+            this.ProxyInfo.MinimumWidth = 6;
+            this.ProxyInfo.Name = "ProxyInfo";
+            this.ProxyInfo.ReadOnly = true;
+            this.ProxyInfo.Width = 180;
+            // 
+            // sizeScreenDataGridViewTextBoxColumn
+            // 
+            this.sizeScreenDataGridViewTextBoxColumn.DataPropertyName = "SizeScreen";
+            this.sizeScreenDataGridViewTextBoxColumn.HeaderText = "Kích thước";
+            this.sizeScreenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sizeScreenDataGridViewTextBoxColumn.Name = "sizeScreenDataGridViewTextBoxColumn";
+            this.sizeScreenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sizeScreenDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // dataAccount
+            // 
+            this.dataAccount.DataSource = typeof(DragonBoyManager.Account);
+            // 
             // TabData
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -669,10 +672,10 @@ namespace DragonBoyManager
             this.Size = new System.Drawing.Size(994, 444);
             this.Load += new System.EventHandler(this.TabData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).EndInit();
             this.ResumeLayout(false);
 
         }
