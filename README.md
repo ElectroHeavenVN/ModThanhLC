@@ -1,11 +1,11 @@
-# ModThanhLC
+# ModThanhLC [[EN](./README_EN.md) | VI]
 Mã nguồn Quản lý tài khoản và Game đã giải mã của `Dragon Ball Pro 2.3.7`, phiên bản `2.0`.
 ## Tải xuống
 - Nếu bạn muốn tải toàn bộ mã nguồn, bạn có thể clone repo này bằng `git` hoặc `GitHub Desktop`.
 - Nếu bạn muốn tải bản đã biên dịch, bạn có thể tải xuống trong phần [Release](https://github.com/ElectroHeavenVN/ModThanhLC/releases/latest/).
 ## Chạy chương trình
 - Chạy `License.exe` trước để tạo tệp cần thiết.
-- Nếu bạn có giấy phép sử dụng, bạn có thể khởi chạy `DragonBoyManager.exe`. Nếu không, bạn có thể bỏ qua kiểm tra giấy phép bằng cách chạy `LicenseCheckBypassInjector.exe`.
+- Nếu bạn có giấy phép hợp lệ, bạn có thể khởi chạy `DragonBoyManager.exe`. Nếu không, bạn có thể bỏ qua kiểm tra giấy phép bằng cách chạy `LicenseCheckBypassInjector.exe`.
 ## Cách sử dụng
 Hướng dẫn sử dụng được lưu tại thư mục [`Files`](Output/Files/).
 ## Credit
