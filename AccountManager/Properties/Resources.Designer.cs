@@ -13,8 +13,6 @@ namespace DragonBoyManager.Properties
 	[GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
 	internal class Resources
 	{
-		private static ResourceManager resourceMan;
-
 		private static CultureInfo resourceCulture;
 
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
