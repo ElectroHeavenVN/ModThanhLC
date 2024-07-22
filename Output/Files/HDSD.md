@@ -18,7 +18,7 @@ Có thể thêm nhiều giá trị đằng sau lệnh bằng cách dùng dấu `
 - `/dsbskill`: Thêm/xóa skill đang trỏ vào/khỏi danh sách những skill dùng khi đồ sát Boss.
 - `/dsbskillclr`: Xóa sạch danh sách những skill dùng khi đồ sát Boss.
 - `/dsbig`: Thêm/xóa Boss đang trỏ vào/khỏi danh sách những Boss không đồ sát (Tự động bỏ qua khi check Boss tiếp theo).
-- `/bosshp` `X`: Giới hạn HP Boss đồ sát về X (Chỉ đánh những Boss có HP dưới X).
+- `/bosshp` `X`: Giới hạn HP Boss đồ sát về `X` (Chỉ đánh những Boss có HP dưới `X`).
 
 ## Lệnh đồ sát Người
 Để cài đặt lọc người, ấn phím `M`, chọn menu `Chức năng hỗ trợ NRSĐ/PK`, chọn mục tương ứng, sau đó chọn cài đặt.
@@ -234,7 +234,7 @@ Tất cả cài đặt ở đây sẽ ảnh hưởng tới việc lúc mới đ�
 
 # Các chức năng phụ khác
 - Thay đổi hình nền
-    + Thay đổi ảnh `wallpaper.png` trong folder Data. Lưu ý phải thay đổi ảnh cùng định dạng.
+    + Thay đổi ảnh `wallpaper.png` trong folder `Data`. Lưu ý phải thay đổi ảnh cùng định dạng.
 - Tự động đánh quái khi đệ tử cần
     + Khi đệ tử nói "Sao sư phụ...", game sẽ bật khiên (nếu có gắn) sau đó sẽ đánh quái gần nhất.
 - DCTT không cần mặc cải trang Yardart
