@@ -32,7 +32,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: DragonBall.Pro.2.3.7.${{ github.action_ref }}.zip
-          name: ${{ github.action_ref }}
+          name: ${{ github.action_ref }}-GHA
           draft: false
           prerelease: false
-          tag_name: ${{ github.action_ref }}
+          tag_name: ${{ github.action_ref }}-GHA
