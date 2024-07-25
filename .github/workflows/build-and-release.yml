@@ -2,7 +2,7 @@ name: Biên dịch dự án và tạo release
 on: 
   workflow_dispatch:
 permissions:
-  actions: write
+  contents: write
 
 jobs:
   build:
