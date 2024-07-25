@@ -32,6 +32,6 @@
     </None>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName)&quot; &quot;$(SolutionDir)Output\$(TargetFileName)&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName).config&quot; &quot;$(SolutionDir)Output\$(TargetFileName).config&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)$(OutDir)*.dll&quot; &quot;$(SolutionDir)Output\Lib\&quot;" />
+    <Exec Command="mkdir &quot;$(SolutionDir)Output&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName)&quot; &quot;$(SolutionDir)Output\$(TargetFileName)&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)$(OutDir)$(TargetFileName).config&quot; &quot;$(SolutionDir)Output\$(TargetFileName).config&quot;&#xD;&#xA;mkdir &quot;$(SolutionDir)Output/Lib&quot;&#xD;&#xA;copy /Y &quot;$(ProjectDir)$(OutDir)*.dll&quot; &quot;$(SolutionDir)Output\Lib\&quot;" />
   </Target>
 </Project>
