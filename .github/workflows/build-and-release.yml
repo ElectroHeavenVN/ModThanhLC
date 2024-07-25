@@ -1,6 +1,8 @@
 name: Biên dịch dự án và tạo release
 on: 
   workflow_dispatch:
+permissions:
+  actions: write
 
 jobs:
   build:
@@ -27,12 +29,13 @@ jobs:
           name: ${{ github.action_ref }}
           path: Output
       - name: Nén artifact
-        run: Compress-Archive -Path Output -DestinationPath "DragonBall.Pro.2.3.7.${{ github.action_ref }}.zip"
+        run: Compress-Archive -Path Output -DestinationPath "DragonBall.Pro.2.3.7.${{ github.ref_name }}.zip"
       - name: Phát hành artifact
         uses: softprops/action-gh-release@v2
         with:
-          files: DragonBall.Pro.2.3.7.${{ github.action_ref }}.zip
-          name: ${{ github.action_ref }}-GHA
+          files: DragonBall.Pro.2.3.7.${{ github.ref_name }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ github.ref_name }}-GHA
           draft: false
           prerelease: false
-          tag_name: ${{ github.action_ref }}-GHA
+          tag_name: ${{ github.ref_name }}-GHA
