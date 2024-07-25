@@ -1,6 +1,7 @@
 name: Biên dịch dự án và tạo release
 on: 
   workflow_dispatch:
+  push:
 permissions:
   contents: write
 
