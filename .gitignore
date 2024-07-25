@@ -374,3 +374,8 @@ Output/Data/logo.png
 Output/Data/wallpaper.png
 Output/Data/QLTK/key.ini
 Output/Data/QLTK/dataAccount.json
+Output/*.exe
+!Output/Dragon ball_237b.exe
+Output/*.exe.config
+Output/Lib/*.dll
+Output/Dragon ball_237b_Data/Managed/AssemblyCSharp.dll
