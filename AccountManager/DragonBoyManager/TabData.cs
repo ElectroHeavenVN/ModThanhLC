@@ -88,13 +88,13 @@ namespace DragonBoyManager
                 Password = textBox2.Text.Trim().ToLower(),
                 Server = comboBox1.SelectedItem.ToString(),
                 Note = textBox3.Text,
-                SizeScreen = ((textBox4.Text == string.Empty || textBox5.Text == string.Empty) ? "1024x600" : (textBox4.Text + "x" + textBox5.Text)),
-                ScreenLevel = ((textBox4.Text == string.Empty || textBox5.Text == string.Empty) ? "Lớn" : ((int.Parse(textBox4.Text) * int.Parse(textBox5.Text) < 450000) ? "Nhỏ" : "Lớn"))
+                SizeScreen = ((textBox4.Text == "" || textBox5.Text == "") ? "1024x600" : (textBox4.Text + "x" + textBox5.Text)),
+                ScreenLevel = ((textBox4.Text == "" || textBox5.Text == "") ? "Lớn" : ((int.Parse(textBox4.Text) * int.Parse(textBox5.Text) < 450000) ? "Nhỏ" : "Lớn"))
             });
             SaveData();
         }
 
-        private bool checkInput()
+        private bool CheckInput()
         {
             return !string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(comboBox1.Text) && !string.IsNullOrEmpty(textBox3.Text);
         }
@@ -112,8 +112,8 @@ namespace DragonBoyManager
                     Password = textBox2.Text.Trim().ToLower(),
                     Server = comboBox1.SelectedItem.ToString(),
                     Note = textBox3.Text,
-                    SizeScreen = ((textBox4.Text == string.Empty || textBox5.Text == string.Empty) ? "1024x600" : (textBox4.Text + "x" + textBox5.Text)),
-                    ScreenLevel = ((textBox4.Text == string.Empty || textBox5.Text == string.Empty) ? "Lớn" : ((int.Parse(textBox4.Text) * int.Parse(textBox5.Text) < 450000) ? "Nhỏ" : "Lớn"))
+                    SizeScreen = ((textBox4.Text == "" || textBox5.Text == "") ? "1024x600" : (textBox4.Text + "x" + textBox5.Text)),
+                    ScreenLevel = ((textBox4.Text == "" || textBox5.Text == "") ? "Lớn" : ((int.Parse(textBox4.Text) * int.Parse(textBox5.Text) < 450000) ? "Nhỏ" : "Lớn"))
                 });
             }
         }
@@ -150,7 +150,7 @@ namespace DragonBoyManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!checkInput())
+            if (!CheckInput())
                 return;
             Account account = getAccount(-1);
             if (account != null)
@@ -239,11 +239,11 @@ namespace DragonBoyManager
                 foreach (Account account in accounts)
                 {
                     if (account != null && (account.process == null || account.process.HasExited))
-                        await MainController.instance.openAccount(account);
+                        await MainController.instance.OpenAccount(account);
                 }
             }
             if (accounts.Count == 1 && accounts[0] != null && (accounts[0].process == null || accounts[0].process.HasExited))
-                await MainController.instance.openAccount(accounts[0]);
+                await MainController.instance.OpenAccount(accounts[0]);
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -291,34 +291,32 @@ namespace DragonBoyManager
 
         public void loadLanguage()
         {
-            if (MainController.language == 1)
-            {
-                usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-                noteDataGridViewTextBoxColumn.HeaderText = "Note";
-                ProxyInfo.HeaderText = "Information";
-                statusDataGridViewTextBoxColumn.HeaderText = "Status";
-                sizeScreenDataGridViewTextBoxColumn.HeaderText = "Size";
-                groupBox1.Text = "Account information";
-                checkBox3.Text = "HideUs";
-                label6.Text = "Height";
-                label5.Text = "Width";
-                label4.Text = "Note";
-                label3.Text = "Server";
-                checkBox2.Text = "HidePass";
-                checkBox1.Text = "Add List account";
-                label2.Text = "Password";
-                label1.Text = "Username";
-                groupBox2.Text = "Interact with account";
-                button11.Text = "Auto open game";
-                button8.Text = "Login";
-                button7.Text = "Close";
-                button5.Text = "Sort";
-                button6.Text = "Minimize";
-                button4.Text = "Add Proxy";
-                button3.Text = "Delete";
-                button2.Text = "Edit";
-                button1.Text = "Add";
-            }
+            if (MainController.language != 1)
+                return;
+            usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            noteDataGridViewTextBoxColumn.HeaderText = "Note";
+            ProxyInfo.HeaderText = "Info";
+            statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            sizeScreenDataGridViewTextBoxColumn.HeaderText = "Size";
+            checkBox3.Text = "HideUs";
+            label6.Text = "Height";
+            label5.Text = "Weight";
+            label4.Text = "Note";
+            label3.Text = "Server";
+            checkBox2.Text = "HidePass";
+            checkBox1.Text = "Add List account";
+            label2.Text = "Password";
+            label1.Text = "Username";
+            button11.Text = "Auto open game";
+            button8.Text = "Login";
+            button7.Text = "Close";
+            button5.Text = "Sort";
+            button6.Text = "Minimize";
+            button4.Text = "Add Proxy";
+            button3.Text = "Delete";
+            button2.Text = "Edit";
+            button1.Text = "Add";
+            button12.Text = "Close selected accs";
         }
 
         private async void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -326,7 +324,7 @@ namespace DragonBoyManager
             foreach (Account account in GetAccountsSelected())
             {
                 if (account != null && (account.process == null || account.process.HasExited))
-                    await MainController.instance.openAccount(account);
+                    await MainController.instance.OpenAccount(account);
             }
         }
 
@@ -339,14 +337,13 @@ namespace DragonBoyManager
                 new TabAddProxyForAccounts(accountsSelected.FindAll(x => x != null)).ShowDialog();
         }
 
-        private async void update_Tick(object sender, EventArgs e)
+        private async void updateTimer_Tick(object sender, EventArgs e)
         {
-            if (_instance.isAutoOpenAccount)
-            {
-                Account acc = _instance.GetAccounts().Find(x => x != null && x.isLogin && (x.process == null || x.process.HasExited));
-                if (acc != null)
-                    await MainController.instance.openAccount(acc);
-            }
+            if (!_instance.isAutoOpenAccount)
+                return;
+            Account acc = _instance.GetAccounts().Find(x => x != null && x.isLogin && (x.process == null || x.process.HasExited));
+            if (acc != null)
+                await MainController.instance.OpenAccount(acc);
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -357,6 +354,15 @@ namespace DragonBoyManager
                 textBox1.PasswordChar = '*';
             else
                 textBox1.PasswordChar = '\0';
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            foreach (Account item in GetAccountsSelected())
+            {
+                if (item.process != null)
+                    item.process.Kill();
+            }
         }
     }
 }

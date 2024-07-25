@@ -85,22 +85,22 @@ namespace DragonBoyManager
                         if (state.account != null)
                         {
                             state.account.workSocket = state.workSocket;
-                            state.account.status = MainController.language == 0 ? "Đã kết nối" : "Connected";
+                            state.account.Status = MainController.language == 0 ? "Đã kết nối" : "Connected";
                             MainController.instance.REFRESH = true;
                         }
                         break;
                     case 1:
                     {
-                        Account account = TabData._instance.GetAccounts().Find(acc => acc != null && acc.ID == int.Parse(Encoding.ASCII.GetString(msg.data)) && !string.IsNullOrEmpty(acc.status));
+                        Account account = TabData._instance.GetAccounts().Find(acc => acc != null && acc.ID == int.Parse(Encoding.ASCII.GetString(msg.data)) && !string.IsNullOrEmpty(acc.Status));
                         if (account != null)
-                            account.status = string.Empty;
+                            account.Status = "";
                         MainController.instance.REFRESH = true;
                         break;
                     }
                     case 3:
                         state.account = waitingAccounts.Find(acc => acc.ID == int.Parse(Encoding.ASCII.GetString(msg.data)));
                         if (state.account != null)
-                            state.account.status = MainController.language == 0 ? "Mất kết nối" : "Disconnected";
+                            state.account.Status = MainController.language == 0 ? "Mất kết nối" : "Disconnected";
                         MainController.instance.REFRESH = true;
                         break;
                     case 2:
@@ -135,7 +135,7 @@ namespace DragonBoyManager
 
 		public static void ReadCallback(IAsyncResult ar)
 		{
-			string empty = string.Empty;
+			string empty = "";
 			StateObject stateObject = (StateObject)ar.AsyncState;
 			Socket workSocket = stateObject.workSocket;
 			int num = 0;
@@ -155,9 +155,7 @@ namespace DragonBoyManager
 				{
 					vMessage = JsonConvert.DeserializeObject<vMessage>(empty);
 				}
-				catch (Exception)
-				{
-				}
+				catch (Exception) { }
 				if (vMessage != null)
 				{
 					if (vMessage.cmd == -1)
@@ -169,9 +167,7 @@ namespace DragonBoyManager
 					workSocket.BeginReceive(stateObject.buffer, 0, 4096, SocketFlags.None, ReadCallback, stateObject);
 					return;
 				}
-				catch (Exception)
-				{
-				}
+				catch (Exception) { }
 			}
 			IL_00a7:
 			if (stateObject.workSocket != null && stateObject.workSocket.Connected)
@@ -182,7 +178,7 @@ namespace DragonBoyManager
 			if (stateObject.account != null)
 			{
 				waitingAccounts.Remove(stateObject.account);
-                stateObject.account.status = string.Empty;
+                stateObject.account.Status = "";
             }
         }
 

@@ -7,9 +7,23 @@ namespace License
 {
     internal class DeviceInformation
 	{
-        public static string GenerateLicense(string DeviceCode)
+        public static string GetRealName(string username)
+        {
+            string text = HashGenerator.GenerateMD5(username);
+            //A convoluted switch statement that returns the hardcoded real name of the user based on the hash of the username.
+            //To protect the privacy of the users, the original switch statement has been replaced with a simple switch statement.
+            switch (text)
+            {
+                default:
+					//return "ElectroHeavenVN";
+					return "9u8Gs0XHgFztuKKRSZfq0Vzt8RaPkpngI/yoyvh77Z0VLJxGetsgmtjLGH15E+sXXqI8a6omMEOIMPNSnoldgGefUm4jdwBcacb7CQEh6ofHRgyBWvwiRhIVod6OQ59l";	//encrypted with MD5 hash of "admin"
+            }
+            return "";
+        }
+
+        public static string GenerateLicense(string deviceCode)
 		{
-			string text = DeviceCode + "." + GetCPUInformation() + GetRamInformation() + GetHardwareInformation();
+			string text = deviceCode + "." + GetCPUInformation() + GetRamInformation() + GetHardwareInformation();
 			if (IsWindowServer())
 				text = text + GetMacAddress() + GetIpv4();
 			return HashGenerator.GenerateMD5(text);
@@ -25,12 +39,12 @@ namespace License
 				if (num < allNetworkInterfaces.Length)
 				{
 					physicalAddress = allNetworkInterfaces[num].GetPhysicalAddress();
-					if (physicalAddress.ToString() != string.Empty)
+					if (physicalAddress.ToString() != "")
 						break;
 					num++;
 					continue;
 				}
-				return string.Empty;
+				return "";
 			}
 			return physicalAddress.ToString();
 		}
@@ -42,7 +56,7 @@ namespace License
 
 		public static string GetCPUInformation()
 		{
-			string result = string.Empty;
+			string result = "";
 			using (ManagementObjectCollection.ManagementObjectEnumerator managementObjectEnumerator = new ManagementClass("win32_processor").GetInstances().GetEnumerator())
 			{
 				if (managementObjectEnumerator.MoveNext())
@@ -53,20 +67,20 @@ namespace License
 
 		public static string GetRamInformation()
 		{
-			string text = string.Empty;
+			string text = "";
 			foreach (ManagementObject item in new ManagementObjectSearcher("select * from Win32_PhysicalMemory").Get())
 			{
 				object obj = item["PartNumber"];
 				object obj2 = item["SerialNumber"];
 				object obj3 = item["Capacity"];
-				text = text + (string.IsNullOrEmpty(text) ? "" : " ~~ ") + ((obj == null) ? string.Empty : obj.ToString().Trim()) + " - " + ((obj2 == null) ? string.Empty : obj2.ToString().Trim()) + " - " + ((obj3 == null) ? string.Empty : obj3.ToString().Trim());
+				text += (string.IsNullOrEmpty(text) ? "" : " ~~ ") + ((obj == null) ? "" : obj.ToString().Trim()) + " - " + ((obj2 == null) ? "" : obj2.ToString().Trim()) + " - " + ((obj3 == null) ? "" : obj3.ToString().Trim());
 			}
 			return text;
 		}
 
 		public static string GetIpv4()
 		{
-			return Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+			return Dns.GetHostEntry(Dns.GetHostName()).AddressList[0].ToString();
 		}
 
 		public static bool IsWindowServer()

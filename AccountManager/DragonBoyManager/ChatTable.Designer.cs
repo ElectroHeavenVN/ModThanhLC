@@ -25,7 +25,6 @@ namespace DragonBoyManager
 
         private Button button2;
 
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && components != null)
@@ -59,9 +58,9 @@ namespace DragonBoyManager
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(575, 282);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -91,7 +90,7 @@ namespace DragonBoyManager
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(9, 153);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(552, 22);
             this.textBox2.TabIndex = 5;
@@ -99,7 +98,7 @@ namespace DragonBoyManager
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(8, 225);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(553, 49);
             this.button2.TabIndex = 4;
@@ -130,7 +129,7 @@ namespace DragonBoyManager
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(9, 101);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(553, 49);
             this.button1.TabIndex = 1;
@@ -141,7 +140,7 @@ namespace DragonBoyManager
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(9, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(552, 22);
             this.textBox1.TabIndex = 0;
@@ -153,7 +152,7 @@ namespace DragonBoyManager
             this.ClientSize = new System.Drawing.Size(583, 286);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChatTable";
             this.Text = "Cửa sổ chat/phím bấm";
             this.Load += new System.EventHandler(this.ChatTable_Load);

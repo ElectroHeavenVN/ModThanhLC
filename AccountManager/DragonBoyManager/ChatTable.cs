@@ -6,9 +6,9 @@ namespace DragonBoyManager
 {
     public partial class ChatTable : Form
     {
-        public static string ChatContent = string.Empty;
+        public static string ChatContent = "";
 
-        public static string PressContent;
+        public static string PressContent = "";
 
         public ChatTable()
         {
@@ -32,6 +32,7 @@ namespace DragonBoyManager
         private void ChatTable_Load(object sender, EventArgs e)
         {
             textBox1.Text = ChatContent;
+            textBox2.Text = PressContent;
             loadLanguage();
         }
 
@@ -60,23 +61,22 @@ namespace DragonBoyManager
         async void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox2.Text))
-            {
-                MessageBox.Show((MainController.language == 0) ? "Chưa nhập nội dung bấm!" : "KeyPress content is empty!");
-                return;
-            }
-
-            if (textBox2.Text.Contains("|"))
-            {
-                string[] contents = textBox2.Text.Split('|');
-                for (int i = 0; i < contents.Length; i++)
-                {
-                    TabControl.instance.sendMessage(7, contents[i], "keyIndex");
-                    await Task.Delay(1000);
-                }
-            }
+                MessageBox.Show((MainController.language != 0) ? "KeyPress content is empty!" : "Chưa nhập nội dung bấm!");
             else
-                TabControl.instance.sendMessage(7, textBox2.Text, "keyIndex");
-            PressContent = textBox2.Text;
+            {
+                if (textBox2.Text.Contains("|"))
+                {
+                    string[] contents = textBox2.Text.Split('|');
+                    for (int i = 0; i < contents.Length; i++)
+                    {
+                        TabControl.instance.sendMessage(7, contents[i], "keyIndex");
+                        await Task.Delay(1000);
+                    }
+                }
+                else
+                    TabControl.instance.sendMessage(7, textBox2.Text, "keyIndex");
+                PressContent = textBox2.Text;
+            }
         }
     }
 }

@@ -16,13 +16,7 @@ namespace DragonBoyManager
 	{
 		public struct RECT
 		{
-			public int left;
-
-			public int top;
-
-			public int right;
-
-			public int bottom;
+			public int left, top, right, bottom;
 		}
 
 		public static string VERSION = "2.0";
@@ -58,7 +52,7 @@ namespace DragonBoyManager
 
 		private void MainController_Load(object sender, EventArgs e)
 		{
-			if (!File.Exists(CheckInfo.gI().Key))
+			if (!File.Exists(CheckInfo.gI().key))
 			{
 				MessageBox.Show((language == 0) ? "Vui lòng mở [ThanhLc] Product License.exe và lấy mã kích hoạt nhập lên website thanhlc.com!" : "Contact admin!!");
 				Application.Exit();
@@ -73,7 +67,6 @@ namespace DragonBoyManager
 			TabSetting.instance.LoadFunctionSetting();
 			TabSetting.instance.LoadGraphicSetting();
 			TabSetting.instance.LoadCaptcha();
-			TabSetting.instance.LoadHotKey();
 			loadLanguage();
 			TabSetting.instance.loadLanguage();
 			TabData._instance.loadLanguage();
@@ -98,8 +91,8 @@ namespace DragonBoyManager
 				đăngNhậpToolStripMenuItem.Text = "Login";
 				sửaKíchThướcToolStripMenuItem.Text = "Edit Size";
 				sửaGhiChúToolStripMenuItem.Text = "Edit Note";
-                toolStripMenuItem_3.Text = "☑ Use Proxy";
-                toolStripMenuItem_4.Text = "❎ Not use Proxy";
+                useProxyToolStripMenuItem.Text = "☑ Use Proxy";
+                doNotUseProxyToolStripMenuItem.Text = "❎ Not use Proxy";
             }
 			catch (Exception ex)
 			{
@@ -180,43 +173,42 @@ namespace DragonBoyManager
 			}
 		}
 
-        public async Task openAccount(Account account)
+        public async Task OpenAccount(Account account)
         {
-            if (account.process == null || account.process.HasExited)
-            {
-                account.process = new Process();
-                account.process.StartInfo.FileName = "Dragon ball_237b.exe";
-                if (account.isUseProxy && Options[1] == "T")
-                    account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username.Trim()} --password {account.Password.Trim()} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --proxy {account.ProxyInfo.Trim()} --size {account.SizeScreen.Trim()} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
-                else
-                    account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username} --password {account.Password} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --size {account.SizeScreen} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
-                account.process.Start();
-                SocketServer.waitingAccounts.Add(account);
-                while (account.process.MainWindowHandle == IntPtr.Zero)
-                    await Task.Delay(1500);
-                SetWindowText(account.process.MainWindowHandle, $"LCT [{account.ID}]");
-            }
+            if (account.process != null && !account.process.HasExited)
+                return;
+            account.process = new Process();
+            account.process.StartInfo.FileName = "Dragon ball_237b.exe";
+            if (account.isUseProxy && Options[1] == "T")
+                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username.Trim()} --password {account.Password.Trim()} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --proxy {account.ProxyInfo.Trim()} --size {account.SizeScreen.Trim()} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
+            else
+                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username} --password {account.Password} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --size {account.SizeScreen} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
+            account.process.Start();
+            SocketServer.waitingAccounts.Add(account);
+            while (account.process.MainWindowHandle == IntPtr.Zero)
+                await Task.Delay(1500);
+            SetWindowText(account.process.MainWindowHandle, $"LCT [{account.ID}]");
         }
 
-        public long currentTimeMillis()
+        public long CurrentTimeMillis()
 		{
 			DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 			return (DateTime.UtcNow.Ticks - dateTime.Ticks) / 10000L;
 		}
 
-		private void update_Tick(object sender, EventArgs e)
+		private void updateTimer_Tick(object sender, EventArgs e)
 		{
 			try
 			{
 				DeleteCrashReportFolder();
 				if (!groupBox1.Enabled)
 					return;
-				if (float.Parse(VERSION) >= float.Parse(CheckInfo.VERSION) && File.Exists("Data/GameData/fixGameError.ini"))
+				if (File.Exists("Data/GameData/fixGameError.ini"))
 					textBox1.Text = File.ReadAllText("Data/GameData/fixGameError.ini");
-				if (Size != new Size(1018, 527))
-				{
-					Size = new Size(1018, 527);
-					REFRESH = true;
+                if (Size != new Size(765, 480))
+                {
+                    Size = new Size(765, 480);
+                    REFRESH = true;
 				}
 				if (!isResetScrollBar && groupBox1.Enabled)
 				{
@@ -225,14 +217,8 @@ namespace DragonBoyManager
 					TabData._instance.dataGridView1.Columns[2].Visible = true;
 					if (!isSetupConnect)
 					{
-						ThreadStart threadStart = default(ThreadStart);
-						Thread thread = new Thread(threadStart ?? (threadStart = delegate
-						{
-							SocketServer.StartListening(int.Parse(File.ReadAllText(TabData._instance.PortPath)));
-						}));
-						thread.IsBackground = true;
-						thread.Start();
-						TabData._instance.LoadData();
+                        new Thread(() => SocketServer.StartListening(int.Parse(File.ReadAllText(TabData._instance.PortPath)))) { IsBackground = true }.Start();
+                        TabData._instance.LoadData();
 						isSetupConnect = true;
 					}
 					isResetScrollBar = true;
@@ -308,7 +294,7 @@ namespace DragonBoyManager
 			foreach (Account account in TabData._instance.GetAccountsSelected())
 			{
 				if (account != null && (account.process == null || account.process.HasExited))
-					await openAccount(account);
+					await OpenAccount(account);
 			}
 		}
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DragonBoyManager
@@ -14,7 +13,7 @@ namespace DragonBoyManager
 
         private TabPage tabPage3;
 
-        private System.Windows.Forms.Timer update;
+        private System.Windows.Forms.Timer updateTimer;
 
         private System.Windows.Forms.TabControl mainTab;
 
@@ -54,9 +53,9 @@ namespace DragonBoyManager
 
         private ToolStripMenuItem sửaGhiChúToolStripMenuItem;
 
-        private ToolStripMenuItem toolStripMenuItem_3;
+        private ToolStripMenuItem useProxyToolStripMenuItem;
 
-        private ToolStripMenuItem toolStripMenuItem_4;
+        private ToolStripMenuItem doNotUseProxyToolStripMenuItem;
 
         private TextBox textBox1;
 
@@ -74,12 +73,6 @@ namespace DragonBoyManager
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabData1 = new DragonBoyManager.TabData();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaKíchThướcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaGhiChúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_4 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new DragonBoyManager.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -95,16 +88,22 @@ namespace DragonBoyManager
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.update = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaKíchThướcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaGhiChúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.useProxyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doNotUseProxyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +116,11 @@ namespace DragonBoyManager
             this.mainTab.Controls.Add(this.tabPage4);
             this.mainTab.Font = new System.Drawing.Font("Segoe UI Black", 8.25F, System.Drawing.FontStyle.Bold);
             this.mainTab.Location = new System.Drawing.Point(0, 14);
-            this.mainTab.Margin = new System.Windows.Forms.Padding(4);
+            this.mainTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTab.Name = "mainTab";
             this.mainTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(1340, 587);
+            this.mainTab.Size = new System.Drawing.Size(1003, 532);
             this.mainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.mainTab.TabIndex = 0;
             // 
@@ -131,11 +130,11 @@ namespace DragonBoyManager
             this.tabPage1.Controls.Add(this.tabData1);
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(64)))), ((int)(((byte)(51)))));
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage1.Size = new System.Drawing.Size(1332, 552);
+            this.tabPage1.Size = new System.Drawing.Size(995, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TÀI KHOẢN";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -146,69 +145,20 @@ namespace DragonBoyManager
             this.tabData1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.tabData1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabData1.CausesValidation = false;
-            this.tabData1.ContextMenuStrip = this.contextMenuStrip1;
-            this.tabData1.Location = new System.Drawing.Point(3, 2);
-            this.tabData1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabData1.Location = new System.Drawing.Point(0, 0);
+            this.tabData1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabData1.Name = "tabData1";
             this.tabData1.Size = new System.Drawing.Size(1325, 546);
             this.tabData1.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngNhậpToolStripMenuItem,
-            this.sửaKíchThướcToolStripMenuItem,
-            this.sửaGhiChúToolStripMenuItem,
-            this.toolStripMenuItem_3,
-            this.toolStripMenuItem_4});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 124);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // toolStripMenuItem_0
-            // 
-            this.đăngNhậpToolStripMenuItem.Name = "toolStripMenuItem_0";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
-            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem_1
-            // 
-            this.sửaKíchThướcToolStripMenuItem.Name = "toolStripMenuItem_1";
-            this.sửaKíchThướcToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.sửaKíchThướcToolStripMenuItem.Text = "Sửa kích thước";
-            this.sửaKíchThướcToolStripMenuItem.Click += new System.EventHandler(this.sửaKíchThướcToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem_2
-            // 
-            this.sửaGhiChúToolStripMenuItem.Name = "toolStripMenuItem_2";
-            this.sửaGhiChúToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.sửaGhiChúToolStripMenuItem.Text = "Sửa ghi chú";
-            this.sửaGhiChúToolStripMenuItem.Click += new System.EventHandler(this.sửaGhiChúToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem_3
-            // 
-            this.toolStripMenuItem_3.Name = "toolStripMenuItem_3";
-            this.toolStripMenuItem_3.Size = new System.Drawing.Size(186, 24);
-            this.toolStripMenuItem_3.Text = "☑ Dùng Proxy";
-            this.toolStripMenuItem_3.Click += new System.EventHandler(this.toolStripMenuItem_3_Click);
-            // 
-            // toolStripMenuItem_4
-            // 
-            this.toolStripMenuItem_4.Name = "toolStripMenuItem_4";
-            this.toolStripMenuItem_4.Size = new System.Drawing.Size(186, 24);
-            this.toolStripMenuItem_4.Text = "❎ Không Proxy";
-            this.toolStripMenuItem_4.Click += new System.EventHandler(this.toolStripMenuItem_4_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tabControl1);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1332, 552);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(995, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ĐIỀU KHIỂN";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -216,19 +166,19 @@ namespace DragonBoyManager
             // tabControl1
             // 
             this.tabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 1);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Size = new System.Drawing.Size(1329, 543);
+            this.tabControl1.Size = new System.Drawing.Size(992, 496);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tabSetting1);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1332, 552);
+            this.tabPage3.Size = new System.Drawing.Size(995, 497);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "CÀI ĐẶT";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -236,10 +186,10 @@ namespace DragonBoyManager
             // tabSetting1
             // 
             this.tabSetting1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.tabSetting1.Location = new System.Drawing.Point(0, 0);
-            this.tabSetting1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabSetting1.Location = new System.Drawing.Point(3, -1);
+            this.tabSetting1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tabSetting1.Name = "tabSetting1";
-            this.tabSetting1.Size = new System.Drawing.Size(1329, 543);
+            this.tabSetting1.Size = new System.Drawing.Size(992, 496);
             this.tabSetting1.TabIndex = 0;
             // 
             // tabPage4
@@ -248,10 +198,10 @@ namespace DragonBoyManager
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.groupBox2);
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(1332, 552);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(995, 497);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "THÔNG TIN";
             // 
@@ -264,10 +214,10 @@ namespace DragonBoyManager
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(9, 177);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1312, 185);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(975, 185);
             this.groupBox3.TabIndex = 75;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin sản phẩm";
@@ -275,7 +225,7 @@ namespace DragonBoyManager
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 122);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(293, 29);
             this.textBox1.TabIndex = 76;
@@ -327,10 +277,10 @@ namespace DragonBoyManager
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(9, 7);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1312, 162);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(975, 162);
             this.groupBox2.TabIndex = 74;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các option đã kích hoạt";
@@ -339,7 +289,7 @@ namespace DragonBoyManager
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(9, 97);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(153, 27);
             this.checkBox3.TabIndex = 3;
@@ -350,7 +300,7 @@ namespace DragonBoyManager
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(9, 130);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(289, 27);
             this.checkBox4.TabIndex = 2;
@@ -361,7 +311,7 @@ namespace DragonBoyManager
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(9, 64);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(221, 27);
             this.checkBox2.TabIndex = 1;
@@ -372,28 +322,76 @@ namespace DragonBoyManager
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(9, 31);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(161, 27);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "OPTION: PROXY";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // timer_0
+            // contextMenuStrip1
             // 
-            this.update.Enabled = true;
-            this.update.Interval = 500;
-            this.update.Tick += new System.EventHandler(this.update_Tick);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đăngNhậpToolStripMenuItem,
+            this.sửaKíchThướcToolStripMenuItem,
+            this.sửaGhiChúToolStripMenuItem,
+            this.useProxyToolStripMenuItem,
+            this.doNotUseProxyToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 124);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // đăngNhậpToolStripMenuItem
+            // 
+            this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
+            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
+            // 
+            // sửaKíchThướcToolStripMenuItem
+            // 
+            this.sửaKíchThướcToolStripMenuItem.Name = "sửaKíchThướcToolStripMenuItem";
+            this.sửaKíchThướcToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.sửaKíchThướcToolStripMenuItem.Text = "Sửa kích thước";
+            this.sửaKíchThướcToolStripMenuItem.Click += new System.EventHandler(this.sửaKíchThướcToolStripMenuItem_Click);
+            // 
+            // sửaGhiChúToolStripMenuItem
+            // 
+            this.sửaGhiChúToolStripMenuItem.Name = "sửaGhiChúToolStripMenuItem";
+            this.sửaGhiChúToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.sửaGhiChúToolStripMenuItem.Text = "Sửa ghi chú";
+            this.sửaGhiChúToolStripMenuItem.Click += new System.EventHandler(this.sửaGhiChúToolStripMenuItem_Click);
+            // 
+            // useProxyToolStripMenuItem
+            // 
+            this.useProxyToolStripMenuItem.Name = "useProxyToolStripMenuItem";
+            this.useProxyToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.useProxyToolStripMenuItem.Text = "☑ Dùng Proxy";
+            this.useProxyToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem_3_Click);
+            // 
+            // doNotUseProxyToolStripMenuItem
+            // 
+            this.doNotUseProxyToolStripMenuItem.Name = "doNotUseProxyToolStripMenuItem";
+            this.doNotUseProxyToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.doNotUseProxyToolStripMenuItem.Text = "❎ Không Proxy";
+            this.doNotUseProxyToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem_4_Click);
+            // 
+            // updateTimer
+            // 
+            this.updateTimer.Enabled = true;
+            this.updateTimer.Interval = 1000;
+            this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.mainTab);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1335, 601);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 539);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -401,17 +399,17 @@ namespace DragonBoyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 596);
+            this.ClientSize = new System.Drawing.Size(999, 540);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainController";
             this.Text = "MainController";
             this.Load += new System.EventHandler(this.MainController_Load);
             this.mainTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -419,6 +417,7 @@ namespace DragonBoyManager
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

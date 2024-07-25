@@ -14,9 +14,6 @@ namespace DragonBoyManager
 		[JsonIgnore]
 		public Process process;
 
-		[JsonIgnore]
-		public string _status = "";
-
 		[JsonProperty("isLogin")]
 		public bool isLogin { get; set; }
 
@@ -45,21 +42,6 @@ namespace DragonBoyManager
         public string SizeScreen { get; set; }
 
 		[JsonIgnore]
-		public string status
-		{
-			get
-			{
-				return _status;
-			}
-			set
-			{
-				setStatus(value);
-			}
-		}
-
-		public void setStatus(string status)
-		{
-			_status = status;
-		}
-	}
+		public string Status { get; set; }
+    }
 }
