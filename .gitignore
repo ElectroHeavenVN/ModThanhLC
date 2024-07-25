@@ -378,4 +378,4 @@ Output/*.exe
 !Output/Dragon ball_237b.exe
 Output/*.exe.config
 Output/Lib/*.dll
-Output/Dragon ball_237b_Data/Managed/AssemblyCSharp.dll
+Output/Dragon ball_237b_Data/Managed/Assembly-CSharp.dll
