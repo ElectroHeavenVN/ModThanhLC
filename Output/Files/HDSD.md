@@ -29,9 +29,12 @@ Có thể thêm nhiều giá trị đằng sau lệnh bằng cách dùng dấu `
 - `/addclan` `X`: Thêm/xóa `clanID` `X` vào/khỏi danh sách những Clan đồ sát theo `clanID`.
 - `/dsnskill`: Thêm/xóa skill đang trỏ vào/khỏi danh sách skill dùng khi đồ sát người.
 - `/dsnskillclr`: Xóa sạch danh sách skill dùng khi đồ sát người.
-- `/dsnig`: Thêm/xóa `charID` của người đang trỏ vào/khỏi danh sách những người không đồ sát (Tự động bỏ qua khi check người tiếp theo).
-- `/dsnig` `X`: Thêm/xóa `charID` `X` vào/khỏi danh sách những người không đồ sát (Tự động bỏ qua khi check người tiếp theo).
-- `/charhp` `X`: Giới hạn HP Người đồ sát về `X` (Chỉ đánh những Người có HP dưới X). Chức năng này tự động check người nào vừa mới hồi sinh tại chỗ sau 10s mới tự động chuyển qua để đánh.
+- `/blockchar`: Thêm/xóa `charID` của người đang trỏ vào/khỏi danh sách những người không đồ sát (Tự động bỏ qua khi check người tiếp theo).
+- `/blockchar` `X`: Thêm/xóa `charID` `X` vào/khỏi danh sách những người không đồ sát (Tự động bỏ qua khi check người tiếp theo).
+- `/charhp` `X`: Giới hạn HP Người đồ sát về `X` (Chỉ đánh những Người có HP dưới `X`).
+- `/blockclan`: Thêm/xoá `clanID` của người đang trỏ vào/khỏi danh sách những clan không đồ sát (Tự động bỏ qua khi check người tiếp theo).
+- `/blockclan` `X`: Thêm/xoá `clanID` `X` vào/khỏi danh sách những clan không đồ sát (Tự động bỏ qua khi check người tiếp theo).
+Chức năng này tự động check người nào vừa mới hồi sinh tại chỗ sau 10s mới tự động chuyển qua để đánh.
 
 ## Lệnh đồ sát Quái
 - `/dsq`: Bật/tắt tự động đồ sát Quái.
@@ -126,6 +129,7 @@ Có thể thêm nhiều giá trị đằng sau lệnh bằng cách dùng dấu `
 - `/frz` `X`: Fake thời gian hồi chiêu của skill đang trỏ thành `X` mili giây (`X` = 0 đồng nghĩa với đóng băng thời gian hồi chiêu).
 
 ## Các lệnh chat khác 
+- `/autowhis`: Bật/tắt tự động thách đấu Whis (Lưu ý: Chức năng này phải bật sau cùng, sau khi cài đặt skill, autoitem, ...).
 - `/dsnv`: Bật/tắt hiển thị danh sách các nhân vật/Boss xuất hiện trong map lên góc phải màn hình. 
 - `/oinf`: Bật/tắt hiển thị thông tin về đối tượng đang trỏ (thông tin nhân vật, thông tin quái, thông tin vật phẩm).
 - `/actg`: Tự động chat thế giới.
@@ -187,7 +191,7 @@ Có thể thêm nhiều giá trị đằng sau lệnh bằng cách dùng dấu `
 - __Phím `M`__: Mở menu chức năng (Phần lớn lệnh ở trong đây).
 - __Phím `=`__: Mở rương đồ (Chức năng chỉ dùng để quan sát).
 
-# Về quản lý tài khoản
+# Về quản lý tài khoản (QLTK)
 ## Cách kích hoạt QLTK
 __Bước 1__: Mở `License.exe`, copy Mã kích hoạt.
 </br>__Bước 2__: Truy cập phần `Lịch sử mua tool` trên web [thanhlc.com](https://thanhlc.com), ấn `EDIT` Mod tương ứng.
