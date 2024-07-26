@@ -1,12 +1,19 @@
+using System;
+using System.Net.Sockets;
+
 public interface GInterface2
 {
-	bool isConnected();
+	string String_2 { get; set; }
 
-	void setHandler(GInterface4 messageHandler);
+	int Int32_0 { get; set; }
 
-	void connect(string host, int port);
+	string String_3 { get; }
 
-	void sendMessage(GClass100 message);
+	TcpClient TcpClient_0 { get; set; }
 
-	void close();
+	event EventHandler<GEventArgs0> Event_0;
+
+	TcpClient CreateConnection(string destinationHost, int destinationPort);
+
+	void CreateConnectionAsync(string destinationHost, int destinationPort);
 }

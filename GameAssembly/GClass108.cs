@@ -1,106 +1,159 @@
 using System;
-using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class GClass108
 {
-	public static GClass175 gclass175_0 = new GClass175();
+	public GClass100 gclass100_0;
 
-	public static void smethod_0(string name, GClass20 img, sbyte nFrame)
+	public static GClass108 gclass108_0;
+
+	private static int int_0;
+
+	private static string string_0;
+
+	public GClass108(string filename)
 	{
-		gclass175_0.method_4(string.Empty + name, new GClass186(img, nFrame));
+		gclass100_0 = new GClass100(GClass59.smethod_0(((TextAsset)Resources.Load(filename, typeof(TextAsset))).bytes));
 	}
 
-	public static GClass186 smethod_1(string nameImg, GClass175 hash)
+	public GClass108(sbyte[] data)
 	{
-		GClass186 gClass = (GClass186)hash.method_0(string.Empty + nameImg);
-		if (gClass == null)
-		{
-			gClass = new GClass186();
-			GClass186 gClass2 = smethod_2(nameImg);
-			if (gClass2 != null)
-			{
-				gClass.gclass20_0 = gClass2.gclass20_0;
-				gClass.sbyte_0 = gClass2.sbyte_0;
-			}
-			hash.method_4(string.Empty + nameImg, gClass);
-		}
-		gClass.long_0 = GClass14.long_0 / 1000L;
-		if (gClass.gclass20_0 == null)
-		{
-			gClass.int_0--;
-			if (gClass.int_0 <= 0)
-			{
-				GClass2.smethod_0().method_144(nameImg);
-				gClass.int_0 = 200;
-			}
-		}
-		return gClass;
+		gclass100_0 = new GClass100(data);
 	}
 
-	public static GClass186 smethod_2(string nameImg)
+	public static void smethod_0()
 	{
-		string text = GClass193.int_12 + "ImgByName_" + nameImg;
-		GClass186 result = null;
-		sbyte[] array = null;
-		array = GClass141.smethod_1(text);
-		if (array != null)
-			try
+		if (int_0 == 2)
+		{
+			int_0 = 1;
+			gclass108_0 = smethod_3(string_0);
+			int_0 = 0;
+		}
+	}
+
+	public static GClass108 smethod_1(string filename)
+	{
+		return smethod_3(filename);
+	}
+
+	private static GClass108 smethod_2(string string_1)
+	{
+		if (int_0 != 0)
+		{
+			for (int i = 0; i < 500; i++)
 			{
-				result = new GClass186();
-				result.sbyte_0 = array[0];
-				result.gclass20_0 = GClass20.smethod_6(array, 1, array.Length - 1);
-				if (result.gclass20_0 == null)
-					return result;
-				return result;
+				Thread.Sleep(5);
+				if (int_0 == 0)
+					break;
 			}
-			catch (Exception)
+			if (int_0 != 0)
 			{
-				Debug.LogError(text + ">>>>>getFromRms: nulllllllllll 2222");
+				Debug.LogError("CANNOT GET INPUTSTREAM " + string_1 + " WHEN GETTING " + string_0);
 				return null;
 			}
-		return result;
+		}
+		gclass108_0 = null;
+		string_0 = string_1;
+		int_0 = 2;
+		int j;
+		for (j = 0; j < 500; j++)
+		{
+			Thread.Sleep(5);
+			if (int_0 == 0)
+				break;
+		}
+		if (j != 500)
+			return gclass108_0;
+		Debug.LogError("TOO LONG FOR CREATE INPUTSTREAM " + string_1);
+		int_0 = 0;
+		return null;
 	}
 
-	public static void smethod_3(string nameImg, sbyte nFrame, sbyte[] data)
+	private static GClass108 smethod_3(string string_1)
 	{
-		string text = GClass193.int_12 + "ImgByName_" + nameImg;
-		GClass102 gClass = new GClass102(data.Length + 1);
-		int i = 0;
 		try
 		{
-			gClass.method_5(nFrame);
-			for (i = 0; i < data.Length; i++)
-			{
-				gClass.method_5(data[i]);
-			}
-			GClass141.smethod_0(text, gClass.method_3());
-			gClass.method_4();
+			return new GClass108(string_1);
 		}
-		catch (Exception ex)
+		catch (Exception)
 		{
-			Debug.LogError(i + ">>Errr save rms: " + text + "  " + ex.ToString());
+			return null;
 		}
 	}
 
-	public static void smethod_4(GClass175 hash, int minute, bool isTrue)
+	public short method_0()
 	{
-		GClass122 gClass = new GClass122("checkDelHash");
-		if (!isTrue)
-		{
-			IDictionaryEnumerator dictionaryEnumerator = hash.method_2();
-			while (dictionaryEnumerator.MoveNext())
-			{
-				GClass186 gClass2 = (GClass186)dictionaryEnumerator.Value;
-				if (GClass14.long_0 / 1000L - gClass2.long_0 > minute * 60)
-					gClass.method_0((string)dictionaryEnumerator.Key);
-			}
-			for (int i = 0; i < gClass.method_2(); i++)
-			{
-				hash.method_5((string)gClass.method_3(i));
-			}
-		}
-		else
-			hash.method_1();
+		return gclass100_0.method_6();
+	}
+
+	public int method_1()
+	{
+		return gclass100_0.method_8();
+	}
+
+	public int method_2()
+	{
+		return gclass100_0.method_5();
+	}
+
+	public void method_3(ref sbyte[] data)
+	{
+		gclass100_0.method_16(ref data);
+	}
+
+	public void method_4()
+	{
+		gclass100_0.method_19();
+	}
+
+	public void method_5()
+	{
+		gclass100_0.method_19();
+	}
+
+	public string method_6()
+	{
+		return gclass100_0.method_14();
+	}
+
+	public sbyte method_7()
+	{
+		return gclass100_0.method_2();
+	}
+
+	public long method_8()
+	{
+		return gclass100_0.method_9();
+	}
+
+	public bool method_9()
+	{
+		return gclass100_0.method_11();
+	}
+
+	public int method_10()
+	{
+		return (byte)gclass100_0.method_2();
+	}
+
+	public int method_11()
+	{
+		return gclass100_0.method_7();
+	}
+
+	public void method_12(ref sbyte[] data)
+	{
+		gclass100_0.method_16(ref data);
+	}
+
+	public int method_13()
+	{
+		return gclass100_0.method_18();
+	}
+
+	internal void method_14(ref sbyte[] sbyte_0, int int_1, int int_2)
+	{
+		throw new NotImplementedException();
 	}
 }

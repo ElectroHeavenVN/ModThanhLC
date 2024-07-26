@@ -1,36 +1,36 @@
-using System;
-
 public class GClass16
 {
-	public static GInterface1 ginterface1_0;
+	public string string_0;
 
-	public static int int_0;
+	private GClass4 gclass4_0;
 
-	public static long long_0;
+	public int int_0 = 70;
 
-	public static bool bool_0;
+	public GClass78 gclass78_0;
 
-	public static void smethod_0(GInterface1 actionListener, int action, long timeEllapse)
+	public bool bool_0;
+
+	public bool bool_1;
+
+	public int int_1;
+
+	public int int_2;
+
+	public long long_0;
+
+	public long long_1;
+
+	public GClass16(string s)
 	{
-		ginterface1_0 = actionListener;
-		int_0 = action;
-		long_0 = GClass77.smethod_18() + timeEllapse;
-		bool_0 = true;
+		gclass4_0 = GClass4.gclass4_14;
+		string_0 = s;
+		int_0 = 20;
 	}
 
-	public static void smethod_1()
+	public GClass16(string s, GClass4 f, int speed)
 	{
-		long num = GClass77.smethod_18();
-		if (!bool_0 || num <= long_0)
-			return;
-		bool_0 = false;
-		try
-		{
-			if (int_0 > 0)
-				GClass167.smethod_8().method_117(int_0, null);
-		}
-		catch (Exception)
-		{
-		}
+		gclass4_0 = f;
+		string_0 = s;
+		int_0 = speed;
 	}
 }

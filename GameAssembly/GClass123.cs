@@ -1,83 +1,67 @@
-public class GClass123 : GClass122
+public class GClass123
 {
-	public static GClass123 gclass123_0 = new GClass123();
+	public static int int_0;
 
-	public static GClass123 gclass123_1 = new GClass123();
+	public static int int_1;
 
-	public static GClass123 gclass123_2 = new GClass123();
+	public static int int_2;
 
-	public static GClass123 gclass123_3 = new GClass123();
+	public static bool bool_0;
 
-	public void method_13()
-	{
-		for (int num = method_2() - 1; num >= 0; num--)
-		{
-			GClass101 gClass = (GClass101)method_3(num);
-			if (gClass != null)
-			{
-				gClass.method_1();
-				if (gClass.bool_0)
-					method_7(num);
-			}
-		}
-	}
+	public static string string_0 = "";
 
 	public static void smethod_0()
 	{
-		gclass123_3.method_13();
-		gclass123_1.method_13();
-		gclass123_2.method_13();
-		gclass123_0.method_13();
+		int_0 = 0;
+		int_1 = 0;
+		bool_0 = false;
 	}
 
-	public void method_14(GClass193 g)
+	public static void smethod_1(GClass122 g, string str, int x, int y, int w, int h, GClass4 f)
 	{
-		for (int i = 0; i < method_2(); i++)
+		if (int_2 != f.method_17(str) || !string_0.Equals(str))
 		{
-			GClass101 gClass = (GClass101)method_3(i);
-			if (gClass != null && !gClass.bool_0)
-				((GClass101)method_3(i)).method_2(g);
+			string_0 = str;
+			int_0 = 0;
+			int_2 = f.method_17(str);
+			bool_0 = false;
+			int_1 = 0;
 		}
-	}
-
-	public void method_15()
-	{
-		for (int num = method_2() - 1; num >= 0; num--)
+		g.method_5(x, y, w, h);
+		if (int_2 > w)
+			f.method_6(g, str, x - int_0, y, 0);
+		else
+			f.method_6(g, str, x + w / 2, y, 2);
+		GClass73.smethod_6(g);
+		if (int_2 <= w)
+			return;
+		if (bool_0)
 		{
-			GClass101 gClass = (GClass101)method_3(num);
-			if (gClass != null)
+			if (int_0 < 0)
+				int_0 += w + int_0 >> 1;
+			if (int_0 > 0)
+				int_0 = 0;
+			if (int_0 == 0)
 			{
-				gClass.bool_0 = true;
-				method_7(num);
+				int_1++;
+				if (int_1 == 50)
+				{
+					int_1 = 0;
+					bool_0 = false;
+				}
+			}
+			return;
+		}
+		int_1++;
+		if (int_1 > 50)
+		{
+			int_0++;
+			if (int_0 >= int_2)
+			{
+				int_1 = 0;
+				int_0 = -w + 30;
+				bool_0 = true;
 			}
 		}
-	}
-
-	public static void smethod_1()
-	{
-		gclass123_3.method_15();
-		gclass123_0.method_15();
-		gclass123_2.method_15();
-		gclass123_1.method_15();
-	}
-
-	public static void smethod_2(GClass101 eff)
-	{
-		gclass123_3.method_0(eff);
-	}
-
-	public static void smethod_3(GClass101 eff)
-	{
-		gclass123_2.method_0(eff);
-	}
-
-	public static void smethod_4(GClass101 eff)
-	{
-		gclass123_1.method_0(eff);
-	}
-
-	public static void smethod_5(GClass101 eff)
-	{
-		gclass123_0.method_0(eff);
 	}
 }

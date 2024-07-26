@@ -1,106 +1,203 @@
-public class GClass185 : GClass183
+using System.Text;
+
+public class GClass185
 {
-	public string[] string_0;
+	public sbyte[] sbyte_0 = new sbyte[2048];
 
-	public bool bool_0;
+	private int int_0;
 
-	private int int_1;
-
-	private int int_2;
-
-	private long long_0 = -1L;
+	private int int_1 = 2048;
 
 	public GClass185()
 	{
-		int_2 = 35;
-		if (GClass14.int_10 <= 176)
-			int_2 = 10;
-		if (GClass14.int_10 > 320)
-			int_2 = 80;
 	}
 
-	public void method_0()
+	public GClass185(int len)
 	{
-		method_2(mResources.PLEASEWAIT, null, null, null);
-		GClass14.gclass183_0 = this;
-		long_0 = GClass77.smethod_18() + 5000L;
+		sbyte_0 = new sbyte[len];
+		int_1 = len;
 	}
 
-	public override void show()
+	public void method_0(sbyte value)
 	{
-		GClass14.gclass183_0 = this;
-		long_0 = -1L;
+		method_20(0);
+		sbyte_0[int_0++] = value;
 	}
 
-	public void method_1(string info)
+	public void method_1(sbyte value)
 	{
-		string_0 = GClass104.gclass104_21.method_15(info, GClass14.int_10 - (int_2 * 2 + 20));
-		int_1 = 80;
-		if (string_0.Length >= 5)
-			int_1 = string_0.Length * GClass104.gclass104_21.method_20() + 20;
+		sbyte_0[int_0++] = value;
 	}
 
-	public void method_2(string info, GClass118 left, GClass118 center, GClass118 right)
+	public void method_2(sbyte value)
 	{
-		string_0 = GClass104.gclass104_21.method_15(info, GClass14.int_10 - (int_2 * 2 + 20));
-		gclass118_0 = left;
-		gclass118_1 = center;
-		gclass118_2 = right;
-		int_1 = 80;
-		if (string_0.Length >= 5)
-			int_1 = string_0.Length * GClass104.gclass104_21.method_20() + 20;
-		if (GClass14.bool_5)
+		method_0(value);
+	}
+
+	public void method_3(int value)
+	{
+		method_0((sbyte)value);
+	}
+
+	public void method_4(char value)
+	{
+		method_0(0);
+		method_0((sbyte)value);
+	}
+
+	public void method_5(byte value)
+	{
+		method_0((sbyte)value);
+	}
+
+	public void method_6(byte[] value)
+	{
+		method_20(value.Length);
+		for (int i = 0; i < value.Length; i++)
 		{
-			if (left != null)
-			{
-				gclass118_0.int_1 = GClass14.int_10 / 2 - 68 - 5;
-				gclass118_0.int_2 = GClass14.int_11 - 50;
-			}
-			if (right != null)
-			{
-				gclass118_2.int_1 = GClass14.int_10 / 2 + 5;
-				gclass118_2.int_2 = GClass14.int_11 - 50;
-			}
-			if (center != null)
-			{
-				gclass118_1.int_1 = GClass14.int_10 / 2 - 35;
-				gclass118_1.int_2 = GClass14.int_11 - 50;
-			}
-		}
-		bool_0 = false;
-		long_0 = -1L;
-	}
-
-	public override void paint(GClass193 g)
-	{
-		g.method_5(0, 0, GClass14.int_10, GClass14.int_11);
-		if (!GClass173.bool_0)
-		{
-			int num = GClass14.int_11 - int_1 - 38;
-			int w = GClass14.int_10 - int_2 * 2;
-			GClass14.gclass97_0.method_33(int_2, num, w, int_1, g);
-			int num2 = num + (int_1 - string_0.Length * GClass104.gclass104_21.method_20()) / 2 - 2;
-			if (bool_0)
-			{
-				num2 += 8;
-				GClass14.smethod_47(GClass14.int_12, num2 - 12, g);
-			}
-			int num3 = 0;
-			int num4 = num2;
-			while (num3 < string_0.Length)
-			{
-				GClass104.gclass104_6.method_6(g, string_0[num3], GClass14.int_12, num4, 2);
-				num3++;
-				num4 += GClass104.gclass104_21.method_20();
-			}
-			base.paint(g);
+			method_1((sbyte)value[i]);
 		}
 	}
 
-	public override void update()
+	public void method_7(sbyte[] value)
 	{
-		base.update();
-		if (long_0 != -1L && GClass77.smethod_18() > long_0)
-			GClass14.smethod_29();
+		method_20(value.Length);
+		for (int i = 0; i < value.Length; i++)
+		{
+			method_1(value[i]);
+		}
+	}
+
+	public void method_8(short value)
+	{
+		method_20(2);
+		for (int num = 1; num >= 0; num--)
+		{
+			method_1((sbyte)(value >> num * 8));
+		}
+	}
+
+	public void method_9(int value)
+	{
+		method_20(2);
+		short num = (short)value;
+		for (int num2 = 1; num2 >= 0; num2--)
+		{
+			method_1((sbyte)(num >> num2 * 8));
+		}
+	}
+
+	public void method_10(ushort value)
+	{
+		method_20(2);
+		for (int num = 1; num >= 0; num--)
+		{
+			method_1((sbyte)(value >> num * 8));
+		}
+	}
+
+	public void method_11(int value)
+	{
+		method_20(4);
+		for (int num = 3; num >= 0; num--)
+		{
+			method_1((sbyte)(value >> num * 8));
+		}
+	}
+
+	public void method_12(long value)
+	{
+		method_20(8);
+		for (int num = 7; num >= 0; num--)
+		{
+			method_1((sbyte)(value >> num * 8));
+		}
+	}
+
+	public void method_13(bool value)
+	{
+		method_0((sbyte)(value ? 1 : 0));
+	}
+
+	public void method_14(bool value)
+	{
+		method_0((sbyte)(value ? 1 : 0));
+	}
+
+	public void method_15(string value)
+	{
+		char[] array = value.ToCharArray();
+		method_8((short)array.Length);
+		method_20(array.Length);
+		for (int i = 0; i < array.Length; i++)
+		{
+			method_1((sbyte)array[i]);
+		}
+	}
+
+	public void method_16(string value)
+	{
+		Encoding unicode = Encoding.Unicode;
+		byte[] array = Encoding.Convert(unicode, Encoding.GetEncoding(65001), unicode.GetBytes(value));
+		method_8((short)array.Length);
+		method_20(array.Length);
+		for (int i = 0; i < array.Length; i++)
+		{
+			method_1((sbyte)array[i]);
+		}
+	}
+
+	public void method_17(ref sbyte[] data, int arg1, int arg2)
+	{
+		if (data == null)
+			return;
+		for (int i = 0; i < arg2; i++)
+		{
+			method_0(data[i + arg1]);
+			if (int_0 > sbyte_0.Length)
+				break;
+		}
+	}
+
+	public void method_18(sbyte[] value)
+	{
+		method_7(value);
+	}
+
+	public sbyte[] method_19()
+	{
+		if (int_0 <= 0)
+			return null;
+		sbyte[] array = new sbyte[int_0];
+		for (int i = 0; i < int_0; i++)
+		{
+			array[i] = sbyte_0[i];
+		}
+		return array;
+	}
+
+	public void method_20(int ltemp)
+	{
+		if (int_0 + ltemp > int_1)
+		{
+			sbyte[] array = new sbyte[int_1 + 1024 + ltemp];
+			for (int i = 0; i < int_1; i++)
+			{
+				array[i] = sbyte_0[i];
+			}
+			sbyte_0 = null;
+			sbyte_0 = array;
+			int_1 += 1024 + ltemp;
+		}
+	}
+
+	public void method_21()
+	{
+		sbyte_0 = null;
+	}
+
+	public void method_22()
+	{
+		sbyte_0 = null;
 	}
 }

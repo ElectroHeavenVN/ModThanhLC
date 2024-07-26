@@ -1,1 +1,1 @@
-public delegate void GDelegate0(string str);
+public delegate void GDelegate0();

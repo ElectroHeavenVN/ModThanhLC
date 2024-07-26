@@ -1,203 +1,152 @@
-using System.Text;
-
 public class GClass131
 {
-	public sbyte[] sbyte_0 = new sbyte[2048];
+	public GClass87 gclass87_0;
 
-	private int int_0;
+	public GClass87 gclass87_1;
 
-	private int int_1 = 2048;
+	public GClass87 gclass87_2;
 
-	public GClass131()
+	public GClass87 gclass87_3;
+
+	public static int int_0;
+
+	public static int int_1 = 100;
+
+	public static int int_2 = 68;
+
+	public static int int_3 = 26;
+
+	public static int int_4 = -1;
+
+	public static int int_5 = -1;
+
+	public virtual void switchToMe()
+	{
+		GClass73.smethod_26();
+		GClass73.smethod_27();
+		if (GClass73.gclass131_0 != null)
+			GClass73.gclass131_0.unLoad();
+		GClass73.gclass131_0 = this;
+		GClass36.smethod_4("cur Screen: " + GClass73.gclass131_0);
+	}
+
+	public virtual void unLoad()
 	{
 	}
 
-	public GClass131(int len)
+	public static void smethod_0()
 	{
-		sbyte_0 = new sbyte[len];
-		int_1 = len;
 	}
 
-	public void method_0(sbyte value)
+	public virtual void keyPress(int keyCode)
 	{
-		method_20(0);
-		sbyte_0[int_0++] = value;
 	}
 
-	public void method_1(sbyte value)
+	public virtual void update()
 	{
-		sbyte_0[int_0++] = value;
 	}
 
-	public void method_2(sbyte value)
+	public virtual void updateKey()
 	{
-		method_0(value);
-	}
-
-	public void method_3(int value)
-	{
-		method_0((sbyte)value);
-	}
-
-	public void method_4(char value)
-	{
-		method_0(0);
-		method_0((sbyte)value);
-	}
-
-	public void method_5(byte value)
-	{
-		method_0((sbyte)value);
-	}
-
-	public void method_6(byte[] value)
-	{
-		method_20(value.Length);
-		for (int i = 0; i < value.Length; i++)
+		if (GClass73.bool_11[(!Main.isPC) ? 5 : 25] || smethod_1(GClass73.gclass131_0.gclass87_1))
 		{
-			method_1((sbyte)value[i]);
+			GClass73.bool_11[(!Main.isPC) ? 5 : 25] = false;
+			int_4 = -1;
+			GClass73.bool_16 = false;
+			if (gclass87_1 != null)
+				gclass87_1.method_1();
 		}
-	}
-
-	public void method_7(sbyte[] value)
-	{
-		method_20(value.Length);
-		for (int i = 0; i < value.Length; i++)
+		if (GClass73.bool_11[12] || smethod_1(GClass73.gclass131_0.gclass87_0))
 		{
-			method_1(value[i]);
-		}
-	}
-
-	public void method_8(short value)
-	{
-		method_20(2);
-		for (int num = 1; num >= 0; num--)
-		{
-			method_1((sbyte)(value >> num * 8));
-		}
-	}
-
-	public void method_9(int value)
-	{
-		method_20(2);
-		short num = (short)value;
-		for (int num2 = 1; num2 >= 0; num2--)
-		{
-			method_1((sbyte)(num >> num2 * 8));
-		}
-	}
-
-	public void method_10(ushort value)
-	{
-		method_20(2);
-		for (int num = 1; num >= 0; num--)
-		{
-			method_1((sbyte)(value >> num * 8));
-		}
-	}
-
-	public void method_11(int value)
-	{
-		method_20(4);
-		for (int num = 3; num >= 0; num--)
-		{
-			method_1((sbyte)(value >> num * 8));
-		}
-	}
-
-	public void method_12(long value)
-	{
-		method_20(8);
-		for (int num = 7; num >= 0; num--)
-		{
-			method_1((sbyte)(value >> num * 8));
-		}
-	}
-
-	public void method_13(bool value)
-	{
-		method_0((sbyte)(value ? 1 : 0));
-	}
-
-	public void method_14(bool value)
-	{
-		method_0((sbyte)(value ? 1 : 0));
-	}
-
-	public void method_15(string value)
-	{
-		char[] array = value.ToCharArray();
-		method_8((short)array.Length);
-		method_20(array.Length);
-		for (int i = 0; i < array.Length; i++)
-		{
-			method_1((sbyte)array[i]);
-		}
-	}
-
-	public void method_16(string value)
-	{
-		Encoding unicode = Encoding.Unicode;
-		byte[] array = Encoding.Convert(unicode, Encoding.GetEncoding(65001), unicode.GetBytes(value));
-		method_8((short)array.Length);
-		method_20(array.Length);
-		for (int i = 0; i < array.Length; i++)
-		{
-			method_1((sbyte)array[i]);
-		}
-	}
-
-	public void method_17(ref sbyte[] data, int arg1, int arg2)
-	{
-		if (data == null)
-			return;
-		for (int i = 0; i < arg2; i++)
-		{
-			method_0(data[i + arg1]);
-			if (int_0 > sbyte_0.Length)
-				break;
-		}
-	}
-
-	public void method_18(sbyte[] value)
-	{
-		method_7(value);
-	}
-
-	public sbyte[] method_19()
-	{
-		if (int_0 <= 0)
-			return null;
-		sbyte[] array = new sbyte[int_0];
-		for (int i = 0; i < int_0; i++)
-		{
-			array[i] = sbyte_0[i];
-		}
-		return array;
-	}
-
-	public void method_20(int ltemp)
-	{
-		if (int_0 + ltemp > int_1)
-		{
-			sbyte[] array = new sbyte[int_1 + 1024 + ltemp];
-			for (int i = 0; i < int_1; i++)
+			GClass73.bool_11[12] = false;
+			int_4 = -1;
+			GClass73.bool_16 = false;
+			if (GClass91.smethod_0().bool_0)
 			{
-				array[i] = sbyte_0[i];
+				if (GClass91.smethod_0().gclass87_0 != null)
+					GClass91.smethod_0().gclass87_0.method_1();
 			}
-			sbyte_0 = null;
-			sbyte_0 = array;
-			int_1 += 1024 + ltemp;
+			else if (gclass87_0 != null)
+			{
+				gclass87_0.method_1();
+			}
+		}
+		if (!GClass73.bool_11[13] && !smethod_1(GClass73.gclass131_0.gclass87_2))
+			return;
+		GClass73.bool_11[13] = false;
+		int_4 = -1;
+		GClass73.bool_16 = false;
+		if (!GClass91.smethod_0().bool_0)
+		{
+			if (gclass87_2 != null)
+				gclass87_2.method_1();
+		}
+		else if (GClass91.smethod_0().gclass87_2 != null)
+		{
+			GClass91.smethod_0().gclass87_2.method_1();
 		}
 	}
 
-	public void method_21()
+	public static bool smethod_1(GClass87 cmd)
 	{
-		sbyte_0 = null;
+		if (cmd != null)
+		{
+			if (cmd.int_1 < 0 || cmd.int_2 == 0)
+			{
+				if (GClass73.gclass42_0 == null)
+				{
+					if (cmd == GClass73.gclass131_0.gclass87_0 && GClass73.smethod_24(0, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 0;
+						if (GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+					if (cmd == GClass73.gclass131_0.gclass87_2 && GClass73.smethod_24(GClass73.int_10 - int_2, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 2;
+						if (GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+					if ((cmd == GClass73.gclass131_0.gclass87_1 || GClass96.gclass96_0 != null) && GClass73.smethod_24(GClass73.int_10 - int_2 >> 1, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 1;
+						if (GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+				}
+				else
+				{
+					if (GClass73.gclass42_0.gclass87_1 != null && GClass73.smethod_24(GClass73.int_10 - int_2 >> 1, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 1;
+						if (cmd == GClass73.gclass42_0.gclass87_1 && GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+					if (GClass73.gclass42_0.gclass87_0 != null && GClass73.smethod_24(0, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 0;
+						if (cmd == GClass73.gclass42_0.gclass87_0 && GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+					if (GClass73.gclass42_0.gclass87_2 != null && GClass73.smethod_24(GClass73.int_10 - int_2, GClass73.int_11 - int_3 - 5, int_2, int_3 + 10))
+					{
+						int_4 = 2;
+						if ((cmd == GClass73.gclass42_0.gclass87_2 || cmd == GClass91.smethod_0().gclass87_2) && GClass73.bool_15 && GClass73.bool_16)
+							return true;
+					}
+				}
+				return false;
+			}
+			return cmd.method_4();
+		}
+		return false;
 	}
 
-	public void method_22()
+	public virtual void paint(GClass122 g)
 	{
-		sbyte_0 = null;
+		g.method_1(-g.method_3(), -g.method_4());
+		g.method_5(0, 0, GClass73.int_10, GClass73.int_11 + 1);
+		if ((!GClass91.smethod_0().bool_0 || !Main.isPC) && GClass73.gclass42_0 == null && !GClass73.gclass145_0.bool_0)
+			GClass73.gclass192_0.method_7(g, gclass87_0, gclass87_1, gclass87_2);
 	}
 }

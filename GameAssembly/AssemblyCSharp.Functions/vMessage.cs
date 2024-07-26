@@ -1,13 +1,9 @@
-using Newtonsoft.Json;
-
 namespace AssemblyCSharp.Functions
 {
-    public class vMessage
-    {
-        [JsonProperty(nameof(cmd))]
-        public int cmd;
+	public class vMessage
+	{
+		public int cmd;
 
-        [JsonProperty(nameof(data))]
-        public byte[] data;
-    }
+		public byte[] data;
+	}
 }

@@ -246,7 +246,7 @@ namespace DragonBoyManager
 						TabData._instance.dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Yellow;
 					if (!TabData._instance.dataGridView1.Rows[i].Cells[0].Value.ToString().Contains("True") && TabData._instance.dataGridView1.Rows[i].DefaultCellStyle.ForeColor != Color.White)
 						TabData._instance.dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-					if (!string.IsNullOrEmpty(TabData._instance.dataGridView1.Rows[i].Cells[9].Value.ToString()))
+					if (TabData._instance.dataGridView1.Rows[i].Cells[9].Value != null && !string.IsNullOrEmpty(TabData._instance.dataGridView1.Rows[i].Cells[9].Value.ToString()))
 					{
 						if ((TabData._instance.dataGridView1.Rows[i].Cells[9].Value.ToString().Contains("Đã kết nối") || TabData._instance.dataGridView1.Rows[i].Cells[9].Value.ToString().Contains("Connected")) && TabData._instance.dataGridView1.Rows[i].Cells[9].Style.BackColor != Color.LimeGreen)
 						{

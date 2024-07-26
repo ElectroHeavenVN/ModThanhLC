@@ -1,33 +1,18 @@
 public class GClass18
 {
-	public int int_0;
+	public const int int_0 = 2;
 
-	public int int_1;
+	public const int int_1 = 1;
 
-	public int int_2;
+	public const int int_2 = 4;
 
-	public sbyte sbyte_0;
+	public const int int_3 = 7;
 
-	public sbyte sbyte_1;
+	public const int int_4 = 0;
 
-	public sbyte sbyte_2 = 1;
+	public const int int_5 = 3;
 
-	public short short_0 = -1;
+	public const int int_6 = 6;
 
-	public GClass18(int x, int y)
-	{
-		int_0 = x;
-		int_1 = y;
-	}
-
-	public GClass18(int x, int y, int fol)
-	{
-		int_0 = x;
-		int_1 = y;
-		sbyte_0 = (sbyte)fol;
-	}
-
-	public GClass18()
-	{
-	}
+	public const int int_7 = 5;
 }

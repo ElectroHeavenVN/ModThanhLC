@@ -1,12 +1,14 @@
-using ns1;
-
 public class GClass201
 {
+	public GClass78 gclass78_0;
+
+	public GClass180 gclass180_0;
+
+	public GClass88 gclass88_0 = new GClass88();
+
 	public int int_0;
 
 	public int int_1;
-
-	public short short_0;
 
 	public int int_2;
 
@@ -16,164 +18,145 @@ public class GClass201
 
 	public int int_5;
 
-	public sbyte sbyte_0;
-
 	public int int_6;
 
-	public int[] int_7;
+	private int int_7;
 
-	public int[] int_8;
+	private int int_8;
 
-	public static GClass175 gclass175_0 = new GClass175();
+	private int int_9;
 
-	public static GClass122 gclass122_0 = new GClass122();
+	public bool bool_0 = true;
 
-	public static GClass122 gclass122_1 = new GClass122();
+	public bool bool_1;
 
-	private bool bool_0;
+	public GClass39 gclass39_0;
 
-	public int int_9;
-
-	public int int_10;
-
-	public static int[] int_11 = new int[61]
+	public GClass201(GClass78 charBelong, int dartType, GClass39 sp, int x, int y)
 	{
-		79, 80, 81, 82, 83, 84, 85, 86, 87, 88,
-		89, 90, 91, 92, 95, 144, 99, 100, 101, 102,
-		103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
-		113, 114, 115, 117, 118, 119, 120, 121, 122, 123,
-		124, 125, 126, 127, 132, 133, 134, 139, 140, 141,
-		142, 143, 144, 145, 146, 147, 171, 121, 122, 229,
-		218
-	};
-
-	public static int[] int_12 = new int[18]
-	{
-		79, 80, 81, 85, 86, 90, 91, 92, 99, 100,
-		101, 102, 103, 104, 105, 106, 107, 108
-	};
-
-	public static sbyte[] sbyte_1;
-
-	public static void smethod_0()
-	{
+		gclass39_0 = sp;
+		gclass78_0 = charBelong;
+		gclass180_0 = GClass144.gclass180_0[dartType];
+		int_3 = gclass180_0.int_0;
+		int_4 = x;
+		int_5 = y;
+		GInterface1 gInterface = ((charBelong.gclass194_0 == null) ? ((GInterface1)charBelong.gclass78_0) : ((GInterface1)charBelong.gclass194_0));
+		method_0(GClass50.smethod_5(gInterface.getX() - x, gInterface.getY() - y));
 	}
 
-	public static bool smethod_1(string keyNew)
+	public void method_0(int angle)
 	{
-		int num = 0;
-		while (true)
+		int_0 = angle;
+		int_1 = int_3 * GClass50.smethod_2(angle) >> 10;
+		int_2 = int_3 * GClass50.smethod_1(angle) >> 10;
+	}
+
+	public void method_1()
+	{
+		if (!bool_0)
+			return;
+		if (gclass78_0.gclass194_0 != null || gclass78_0.gclass78_0 != null)
 		{
-			if (num < gclass122_0.method_2())
+			GInterface1 gInterface = ((gclass78_0.gclass194_0 == null) ? ((GInterface1)gclass78_0.gclass78_0) : ((GInterface1)gclass78_0.gclass194_0));
+			for (int i = 0; i < gclass180_0.short_8; i++)
 			{
-				if (((string)gclass122_0.method_3(num)).Equals(keyNew))
-					break;
-				num++;
-				continue;
-			}
-			return false;
-		}
-		return true;
-	}
-
-	public static bool smethod_2(string keyLast)
-	{
-		for (int i = 0; i < gclass122_1.method_2(); i++)
-		{
-			if (((string)gclass122_1.method_3(i)).Equals(keyLast))
-				return true;
-		}
-		return false;
-	}
-
-	public bool method_0()
-	{
-		if (GClass193.int_12 != 1)
-		{
-			if (GClass137.smethod_14())
-				return true;
-			int num = 0;
-			while (true)
-			{
-				if (num < int_11.Length)
+				if (gclass180_0.short_3.Length != 0)
+					gclass88_0.method_0(new GClass193(int_4, int_5));
+				int num = ((gclass78_0.getX() <= gInterface.getX()) ? (-10) : 10);
+				int_8 = gInterface.getX() + num - int_4;
+				int_9 = gInterface.getY() - gInterface.getH() / 2 - int_5;
+				int_7++;
+				if (GClass50.smethod_28(int_8) >= 20 || GClass50.smethod_28(int_9) >= 20)
 				{
-					if (short_0 == int_11[num])
-						break;
-					num++;
+					int num2 = GClass50.smethod_5(int_8, int_9);
+					if (GClass118.smethod_0(num2 - int_0) < 90 || int_8 * int_8 + int_9 * int_9 > 4096)
+					{
+						if (GClass118.smethod_0(num2 - int_0) < 15)
+							int_0 = num2;
+						else if ((num2 - int_0 >= 0 && num2 - int_0 < 180) || num2 - int_0 < -180)
+						{
+							int_0 = GClass50.smethod_6(int_0 + 15);
+						}
+						else
+						{
+							int_0 = GClass50.smethod_6(int_0 - 15);
+						}
+					}
+					if (!bool_1 && int_3 < 8192)
+						int_3 += 1024;
+					int_1 = int_3 * GClass50.smethod_2(int_0) >> 10;
+					int_2 = int_3 * GClass50.smethod_1(int_0) >> 10;
+					int_8 += int_1;
+					int_4 += int_8 >> 10;
+					int_8 &= 1023;
+					int_9 += int_2;
+					int_5 += int_9 >> 10;
+					int_9 &= 1023;
 					continue;
 				}
-				return false;
+				if (gclass78_0.gclass78_0 != null && gclass78_0.gclass78_0.bool_10)
+					gclass78_0.gclass78_0.method_112(gclass78_0.gclass78_0.int_39, 0, gclass78_0.gclass78_0.bool_6, gclass78_0.gclass78_0.bool_5);
+				method_2();
+				return;
 			}
-			return true;
-		}
-		return true;
-	}
-
-	public bool method_1()
-	{
-		for (int i = 0; i < int_12.Length; i++)
-		{
-			if (short_0 == int_12[i])
-				return true;
-		}
-		return false;
-	}
-
-	public void method_2()
-	{
-		if (method_0() || sbyte_0 == 2 || sbyte_0 == 4 || gclass175_0.method_7(short_0 + "blend" + sbyte_0))
-			return;
-		GClass20 gClass = (GClass20)gclass175_0.method_0(short_0 + string.Empty);
-		if (gClass != null && gClass.method_3() > 4)
-		{
-			sbyte[] array = GClass141.smethod_1("x" + GClass193.int_12 + "blend" + short_0 + "layer" + sbyte_0);
-			if (array != null)
+			for (int j = 0; j < gclass88_0.method_2(); j++)
 			{
-				GClass20 v = GClass20.smethod_6(array, 0, array.Length);
-				gclass175_0.method_4(short_0 + "blend" + sbyte_0, v);
+				GClass193 gClass = (GClass193)gclass88_0.method_3(j);
+				gClass.int_0++;
+				if (gClass.int_0 >= gclass180_0.short_3.Length)
+					gclass88_0.method_7(j);
 			}
-			else
-				gclass175_0.method_4(short_0 + "blend" + sbyte_0, GClass158.smethod_0(gClass, sbyte_0, short_0));
 		}
+		else
+			method_2();
 	}
 
-	public void method_3(GClass193 g)
+	private void method_2()
 	{
-		if (GClass66.smethod_0().bool_10 || GClass124.bool_35 || (short_0 == 279 && GClass167.smethod_8().int_232 >= 110))
-			return;
-		int int_ = GClass167.int_22;
-		int int_2 = GClass167.int_23;
-		GClass20 gClass = null;
-		gClass = ((sbyte_0 == 2 || sbyte_0 == 4) ? ((GClass20)gclass175_0.method_0(short_0 + string.Empty)) : ((!method_0()) ? ((GClass20)gclass175_0.method_0(short_0 + "blend" + sbyte_0)) : ((GClass20)gclass175_0.method_0(short_0 + string.Empty))));
-		if (gClass == null || short_0 == 96)
-			return;
-		if (sbyte_0 == 4)
-			int_9 = -int_ / 2 + 100;
-		if (short_0 == 28 && sbyte_0 == 3)
-			int_9 = -int_ / 3 + 200;
-		if ((short_0 == 67 || short_0 == 68 || short_0 == 69 || short_0 == 70) && sbyte_0 == 3)
-			int_9 = -int_ / 3 + 200;
-		if (method_1() && sbyte_0 < 4)
+		if (!gclass78_0.bool_45 && int_4 >= GClass144.int_22 && int_4 <= GClass144.int_22 + GClass73.int_10)
+			GClass109.smethod_1().method_22();
+		gclass78_0.method_76();
+		if (gclass78_0.bool_10)
+			gclass78_0.method_28();
+		if (gclass78_0.bool_45)
 		{
-			int_9 = -(int_ >> 4) + 50;
-			int_10 = (int_2 >> 5) - 15;
+			gclass78_0.bool_45 = false;
+			if (gclass78_0.bool_36 && gclass78_0.bool_10 && gclass78_0.int_11 != 14 && gclass78_0.int_11 != 5)
+				gclass78_0.bool_36 = false;
+			GClass144.smethod_8().method_51(int_4, int_5);
 		}
-		int num = this.int_2 + int_4 + int_9;
-		int num2 = int_3 + int_5 + int_10;
-		if (this.int_2 + int_4 + gClass.method_0() + int_9 >= int_ && this.int_2 + int_4 + int_9 <= int_ + GClass14.int_10 && int_3 + int_5 + int_10 + gClass.method_1() >= int_2 && int_3 + int_5 + int_10 <= int_2 + GClass14.int_11)
+		gclass78_0.gclass201_0 = null;
+		gclass78_0.bool_44 = false;
+		gclass78_0.gclass39_0 = null;
+		gclass78_0.gclass39_1 = null;
+	}
+
+	public void method_3(GClass122 g)
+	{
+		if (!bool_0)
+			return;
+		int num = GClass94.smethod_2(360 - int_0);
+		int num2 = GClass94.sbyte_0[num];
+		int transform = GClass94.int_15[num];
+		for (int i = gclass88_0.method_2() / 2; i < gclass88_0.method_2(); i++)
 		{
-			g.method_23(gClass, 0, 0, GClass193.smethod_0(gClass), GClass193.smethod_1(gClass), int_1, this.int_2 + int_4 + int_9, int_3 + int_5 + int_10, 0);
-			if (short_0 == 11 && GClass137.int_37 != 122)
-			{
-				g.method_5(num, num2 + 24, 48, 14);
-				for (int i = 0; i < 2; i++)
-				{
-					g.method_23(GClass137.gclass20_5, 0, (GClass14.int_8 % 8 >> 2) * 24, 24, 24, 0, num + i * 24, num2 + 24, 0);
-				}
-				g.method_5(GClass167.int_22, GClass167.int_23, GClass167.int_6, GClass167.int_7);
-			}
+			GClass193 gClass = (GClass193)gclass88_0.method_3(i);
+			GClass28.smethod_6(g, gclass180_0.short_4[gClass.int_0], gClass.int_1, gClass.int_2, 0, 3);
 		}
-		if (GClass137.smethod_15() && short_0 > 137 && short_0 != 156 && short_0 != 159 && short_0 != 157 && short_0 != 165 && short_0 != 167 && short_0 != 168 && short_0 != 169 && short_0 != 170 && short_0 != 238 && GClass137.int_23 - (this.int_2 + int_4 + int_9) >= int_ && GClass137.int_23 - (this.int_2 + int_4 + int_9 + gClass.method_0()) <= int_ + GClass14.int_10 && int_3 + int_5 + int_10 + gClass.method_1() >= int_2 && int_3 + int_5 + int_10 <= int_2 + GClass14.int_11 && (short_0 < 241 || short_0 >= 266))
-			g.method_23(gClass, 0, 0, GClass193.smethod_0(gClass), GClass193.smethod_1(gClass), 2, GClass137.int_23 - (this.int_2 + int_4 + int_9), int_3 + int_5 + int_10, GClass73.int_2);
+		int num3 = GClass73.int_8 % gclass180_0.short_2.Length;
+		GClass28.smethod_6(g, gclass180_0.short_2[num3][num2], int_4, int_5, transform, 3);
+		for (int j = 0; j < gclass88_0.method_2(); j++)
+		{
+			GClass193 gClass2 = (GClass193)gclass88_0.method_3(j);
+			GClass28.smethod_6(g, gclass180_0.short_3[gClass2.int_0], gClass2.int_1, gClass2.int_2, 0, 3);
+		}
+		GClass28.smethod_6(g, gclass180_0.short_1[num3][num2], int_4, int_5, transform, 3);
+		for (int k = 0; k < gclass88_0.method_2(); k++)
+		{
+			GClass193 gClass3 = (GClass193)gclass88_0.method_3(k);
+			if (GClass50.smethod_28(GClass94.gclass2_0.method_1(100)) < gclass180_0.short_7)
+				GClass28.smethod_6(g, (GClass73.int_8 % 2 != 0) ? gclass180_0.short_6[gClass3.int_0] : gclass180_0.short_5[gClass3.int_0], gClass3.int_1, gClass3.int_2, 0, 3);
+		}
+		g.method_16(16711680);
 	}
 }

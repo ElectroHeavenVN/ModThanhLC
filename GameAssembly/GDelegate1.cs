@@ -1,1 +1,1 @@
-public delegate void GDelegate1(GClass193 g, int x, int y);
+public delegate void GDelegate1(string str);

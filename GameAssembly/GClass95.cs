@@ -1,84 +1,82 @@
-public class GClass95
+public class GClass95 : GClass93
 {
-	public const sbyte sbyte_0 = 0;
+	public GClass124 gclass124_0;
 
-	public const sbyte sbyte_1 = 1;
+	private int int_0;
 
-	public const sbyte sbyte_2 = 0;
+	private int int_1;
 
-	public const sbyte sbyte_3 = 1;
+	private int int_2;
 
-	public const sbyte sbyte_4 = 2;
+	private int int_3;
 
-	public const sbyte sbyte_5 = 3;
+	private int int_4;
 
-	public const sbyte sbyte_6 = 4;
+	private GClass78 gclass78_0;
 
-	public GClass205 gclass205_0;
+	private GClass194 gclass194_0;
 
-	public short short_0;
+	private short short_0;
 
-	public int int_0;
+	private long long_0;
 
-	public long long_0;
+	private int int_5;
 
-	public int int_1;
-
-	public long long_1;
-
-	public int int_2;
-
-	public int int_3;
-
-	public int int_4;
-
-	public int int_5;
-
-	public GClass189[] gclass189_0;
-
-	public bool bool_0;
-
-	public short short_1;
-
-	public string string_0;
-
-	public short short_2;
-
-	public short short_3;
-
-	public string method_0()
+	public static void smethod_0(int id, int cx, int cy, int loopCount)
 	{
-		if (short_3 / 10 >= 100)
-			return "MAX";
-		if (short_3 % 10 != 0)
-		{
-			int num = short_3 % 10;
-			return short_3 / 10 + "." + num % 10 + "%";
-		}
-		return short_3 / 10 + "%";
+		GClass95 gClass = new GClass95();
+		gClass.gclass124_0 = GClass144.gclass124_0[id - 1];
+		gClass.int_3 = cx;
+		gClass.int_4 = cy;
+		gClass.short_0 = (short)loopCount;
+		GClass93.gclass88_0.method_0(gClass);
 	}
 
-	public string method_1()
+	public override void paint(GClass122 g)
 	{
-		if (int_1 % 1000 == 0)
-			return int_1 / 1000 + string.Empty;
-		int num = int_1 % 1000;
-		return int_1 / 1000 + "." + ((num % 100 != 0) ? (num / 10) : (num / 100));
+		if (GClass122.int_12 == 1)
+			GClass144.int_79++;
+		if (GClass144.int_79 < 8)
+		{
+			if (gclass78_0 != null)
+			{
+				int_3 = gclass78_0.int_4;
+				int_4 = gclass78_0.int_5 + GClass73.int_58;
+			}
+			if (gclass194_0 != null)
+			{
+				int_3 = gclass194_0.int_8;
+				int_4 = gclass194_0.int_9 + GClass73.int_58;
+			}
+			int x = int_3 + int_1 + gclass124_0.gclass209_0[int_0].int_0;
+			int y = int_4 + int_2 + gclass124_0.gclass209_0[int_0].int_1;
+			GClass28.smethod_6(g, gclass124_0.gclass209_0[int_0].int_2, x, y, int_5, GClass122.int_1 | GClass122.int_0);
+		}
 	}
 
-	public void method_2(int x, int y, GClass193 g)
+	public override void update()
 	{
-		GClass72.smethod_6(g, gclass205_0.int_4, x, y, 0, GClass73.int_6);
-		long num = GClass77.smethod_18() - long_1;
-		if (num >= int_1)
+		if ((ulong)long_0 <= 0uL)
 		{
-			bool_0 = false;
-			return;
+			int_0++;
+			if (int_0 >= gclass124_0.gclass209_0.Length)
+			{
+				short_0--;
+				if (short_0 > 0)
+					int_0 = 0;
+				else
+					GClass93.gclass88_0.method_8(this);
+			}
 		}
-		g.method_20(2721889, 0.7f);
-		if (bool_0 && GClass14.int_8 % 6 > 2)
-			g.method_16(876862);
-		int num2 = (int)(num * 20L / int_1);
-		g.method_15(x - 10, y - 10 + num2, 20, 20 - num2);
+		else
+		{
+			int_0++;
+			if (int_0 >= gclass124_0.gclass209_0.Length)
+				int_0 = 0;
+			if (GClass203.smethod_18() - long_0 > 0L)
+				GClass93.gclass88_0.method_8(this);
+		}
+		if (GClass73.int_8 % 11 == 0 && gclass78_0 != null && gclass78_0 != GClass78.smethod_1() && !GClass144.gclass88_5.method_1(gclass78_0))
+			GClass93.gclass88_0.method_8(this);
 	}
 }

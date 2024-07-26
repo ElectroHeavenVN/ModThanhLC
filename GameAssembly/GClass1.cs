@@ -1,396 +1,257 @@
+using System;
+using System.IO;
+using System.Threading;
+using UnityEngine;
+
 public class GClass1
 {
-	public int int_0;
+	public static int int_0;
 
-	public int int_1;
+	public static sbyte[] sbyte_0;
 
-	public int int_2;
+	public static string string_0;
 
-	public int int_3;
-
-	public int int_4;
-
-	public int int_5;
-
-	public int int_6;
-
-	public int int_7;
-
-	public int int_8;
-
-	public int int_9;
-
-	public int int_10;
-
-	public int int_11;
-
-	public int int_12;
-
-	public int int_13;
-
-	public static GClass1 gclass1_0;
-
-	private int int_14;
-
-	private int int_15;
-
-	private int[] int_16 = new int[3];
-
-	public bool bool_0;
-
-	public bool bool_1;
-
-	private int int_17;
-
-	public int int_18;
-
-	public int int_19;
-
-	public int int_20;
-
-	public int int_21;
-
-	public bool bool_2 = true;
-
-	public void method_0()
+	public static void smethod_0(string filename, sbyte[] data)
 	{
-		int_0 = 0;
-		int_1 = 0;
-		int_2 = 0;
-		int_3 = 0;
-		int_4 = 0;
-		int_5 = 0;
-		int_6 = 0;
-		int_7 = 0;
-		int_12 = 0;
-		int_13 = 0;
-		int_10 = 0;
-		int_11 = 0;
-	}
-
-	public GClass159 method_1()
-	{
-		if (!bool_2)
-			return method_4();
-		return method_3(false);
-	}
-
-	public GClass159 method_2(bool isGetSelectNow)
-	{
-		if (bool_2)
-			return method_3(isGetSelectNow);
-		return method_4();
-	}
-
-	private GClass159 method_3(bool bool_3)
-	{
-		int num = int_8;
-		int num2 = int_9;
-		int w = int_10;
-		int h = int_11;
-		if (GClass14.bool_14)
-		{
-			if (!bool_0 && GClass14.smethod_48(num, num2, w, h))
-			{
-				for (int i = 0; i < int_16.Length; i++)
-				{
-					int_16[0] = GClass14.int_1;
-				}
-				int_15 = GClass14.int_1;
-				bool_0 = true;
-				if (!bool_3)
-					int_18 = -1;
-				bool_1 = int_17 != 0;
-				int_17 = 0;
-			}
-			else if (bool_0)
-			{
-				int_14++;
-				if (int_14 > 5 && int_15 == GClass14.int_1 && !bool_1)
-				{
-					int_15 = -1000;
-					if (int_21 <= 1)
-						int_18 = (int_1 + GClass14.int_1 - num2) / int_19;
-					else
-					{
-						int num3 = (int_1 + GClass14.int_1 - num2) / int_19;
-						int num4 = (int_0 + GClass14.int_0 - num) / int_19;
-						int_18 = num3 * int_21 + num4;
-					}
-				}
-				int num5 = GClass14.int_1 - int_16[0];
-				if (bool_3)
-					int_18 = (int_1 + GClass14.int_1 - num2) / int_19;
-				else if (num5 != 0 && int_18 != -1)
-				{
-					int_18 = -1;
-				}
-				for (int num6 = int_16.Length - 1; num6 > 0; num6--)
-				{
-					int_16[num6] = int_16[num6 - 1];
-				}
-				int_16[0] = GClass14.int_1;
-				int_1 -= num5;
-				if (int_1 < 0)
-					int_1 = 0;
-				if (int_1 > int_13)
-					int_1 = int_13;
-				if (int_3 < 0 || int_3 > int_13)
-					num5 /= 2;
-				int_3 -= num5;
-			}
-		}
-		bool flag = false;
-		if (GClass14.bool_16 && bool_0)
-		{
-			int i2 = GClass14.int_1 - int_16[0];
-			GClass14.bool_16 = false;
-			if (GClass191.smethod_28(i2) < 20 && GClass191.smethod_28(GClass14.int_1 - int_15) < 20 && !bool_1)
-			{
-				int_17 = 0;
-				int_1 = int_3;
-				int_15 = -1000;
-				if (int_21 > 1)
-				{
-					int num7 = (int_1 + GClass14.int_1 - num2) / int_19;
-					int num8 = (int_0 + GClass14.int_0 - num) / int_19;
-					int_18 = num7 * int_21 + num8;
-				}
-				else
-					int_18 = (int_1 + GClass14.int_1 - num2) / int_19;
-				int_14 = 0;
-				flag = true;
-			}
-			else if (int_18 == -1 || int_14 <= 5)
-			{
-				if ((int_18 == -1 && !bool_1) || (bool_3 && int_18 != -1 && !bool_1))
-				{
-					if (int_3 < 0)
-						int_1 = 0;
-					else if (int_3 > int_13)
-					{
-						int_1 = int_13;
-					}
-					else
-					{
-						int num9 = GClass14.int_1 - int_16[0] + (int_16[0] - int_16[1]) + (int_16[1] - int_16[2]);
-						int_17 = -((num9 > 10) ? 10 : ((num9 < -10) ? (-10) : 0)) * 100;
-					}
-				}
-			}
-			else
-			{
-				int_14 = 0;
-				flag = true;
-			}
-			bool_0 = false;
-			int_14 = 0;
-			GClass14.bool_16 = false;
-		}
-		GClass159 gClass = new GClass159();
-		gClass.int_0 = int_18;
-		gClass.bool_1 = flag;
-		gClass.bool_0 = bool_0;
-		return gClass;
-	}
-
-	private GClass159 method_4()
-	{
-		int num = int_8;
-		int y = int_9;
-		int w = int_10;
-		int h = int_11;
-		if (GClass14.bool_14)
-		{
-			if (!bool_0 && GClass14.smethod_48(num, y, w, h))
-			{
-				for (int i = 0; i < int_16.Length; i++)
-				{
-					int_16[0] = GClass14.int_0;
-				}
-				int_15 = GClass14.int_0;
-				bool_0 = true;
-				int_18 = -1;
-				bool_1 = int_17 != 0;
-				int_17 = 0;
-			}
-			else if (bool_0)
-			{
-				int_14++;
-				if (int_14 > 5 && int_15 == GClass14.int_0 && !bool_1)
-				{
-					int_15 = -1000;
-					int_18 = (int_0 + GClass14.int_0 - num) / int_19;
-				}
-				int num2 = GClass14.int_0 - int_16[0];
-				if (num2 != 0 && int_18 != -1)
-					int_18 = -1;
-				for (int num3 = int_16.Length - 1; num3 > 0; num3--)
-				{
-					int_16[num3] = int_16[num3 - 1];
-				}
-				int_16[0] = GClass14.int_0;
-				int_0 -= num2;
-				if (int_0 < 0)
-					int_0 = 0;
-				if (int_0 > int_12)
-					int_0 = int_12;
-				if (int_2 < 0 || int_2 > int_12)
-					num2 /= 2;
-				int_2 -= num2;
-			}
-		}
-		bool flag = false;
-		if (GClass14.bool_16 && bool_0)
-		{
-			int i2 = GClass14.int_0 - int_16[0];
-			GClass14.bool_16 = false;
-			if (GClass191.smethod_28(i2) < 20 && GClass191.smethod_28(GClass14.int_0 - int_15) < 20 && !bool_1)
-			{
-				int_17 = 0;
-				int_0 = int_2;
-				int_15 = -1000;
-				int_18 = (int_0 + GClass14.int_0 - num) / int_19;
-				int_14 = 0;
-				flag = true;
-			}
-			else if (int_18 == -1 || int_14 <= 5)
-			{
-				if (int_18 == -1 && !bool_1)
-				{
-					if (int_2 >= 0)
-					{
-						if (int_2 > int_12)
-							int_0 = int_12;
-						else
-						{
-							int num4 = GClass14.int_0 - int_16[0] + (int_16[0] - int_16[1]) + (int_16[1] - int_16[2]);
-							int_17 = -((num4 > 10) ? 10 : ((num4 < -10) ? (-10) : 0)) * 100;
-						}
-					}
-					else
-						int_0 = 0;
-				}
-			}
-			else
-			{
-				int_14 = 0;
-				flag = true;
-			}
-			bool_0 = false;
-			int_14 = 0;
-			GClass14.bool_16 = false;
-		}
-		GClass159 gClass = new GClass159();
-		gClass.int_0 = int_18;
-		gClass.bool_1 = flag;
-		gClass.bool_0 = bool_0;
-		return gClass;
-	}
-
-	public void method_5()
-	{
-		if (int_17 != 0 && !bool_0)
-		{
-			if (!bool_2)
-			{
-				int_0 += int_17 / 100;
-				if (int_0 >= 0)
-				{
-					if (int_0 <= int_12)
-						int_2 = int_0;
-					else
-						int_0 = int_12;
-				}
-				else
-					int_0 = 0;
-			}
-			else
-			{
-				int_1 += int_17 / 100;
-				if (int_1 < 0)
-					int_1 = 0;
-				else if (int_1 > int_13)
-				{
-					int_1 = int_13;
-				}
-				else
-				{
-					int_3 = int_1;
-				}
-			}
-			int_17 = int_17 * 9 / 10;
-			if (int_17 < 100 && int_17 > -100)
-				int_17 = 0;
-		}
-		if (int_2 != int_0 && !bool_0)
-		{
-			int_4 = int_0 - int_2 << 2;
-			int_6 += int_4;
-			int_2 += int_6 >> 4;
-			int_6 &= 15;
-		}
-		if (int_3 != int_1 && !bool_0)
-		{
-			int_5 = int_1 - int_3 << 2;
-			int_7 += int_5;
-			int_3 += int_7 >> 4;
-			int_7 &= 15;
-		}
-	}
-
-	public void method_6(int nItem, int ITEM_SIZE, int xPos, int yPos, int width, int height, bool bool_3, int ITEM_PER_LINE)
-	{
-		int_8 = xPos;
-		int_9 = yPos;
-		int_19 = ITEM_SIZE;
-		int_20 = nItem;
-		int_10 = width;
-		int_11 = height;
-		bool_2 = bool_3;
-		int_21 = ITEM_PER_LINE;
-		GClass191.smethod_8("nItem= " + nItem + " ITEMSIZE= " + ITEM_SIZE + " heghit= " + height);
-		if (!bool_3)
-			int_12 = ITEM_PER_LINE * ITEM_SIZE - width;
+		if (!(Thread.CurrentThread.Name == Main.mainThreadName))
+			smethod_5(filename, data);
 		else
-		{
-			int num = nItem / ITEM_PER_LINE;
-			if (nItem % ITEM_PER_LINE != 0)
-				num++;
-			int_13 = num * ITEM_SIZE - height;
-		}
-		if (int_13 < 0)
-			int_13 = 0;
-		if (int_12 < 0)
-			int_12 = 0;
+			smethod_11(filename, data);
 	}
 
-	public void method_7(int to)
+	public static sbyte[] smethod_1(string filename)
 	{
-		if (bool_2)
+		if (!(Thread.CurrentThread.Name == Main.mainThreadName))
+			return smethod_6(filename);
+		return smethod_12(filename);
+	}
+
+	public static string smethod_2(string fileName)
+	{
+		sbyte[] array = smethod_1(fileName);
+		if (array == null)
+			return null;
+		GClass108 gClass = new GClass108(array);
+		try
 		{
-			to -= (int_11 - int_19) / 2;
-			int_1 = to;
-			if (int_1 < 0)
-				int_1 = 0;
-			if (int_1 > int_13)
-				int_1 = int_13;
+			string result = gClass.method_6();
+			gClass.method_4();
+			return result;
 		}
-		else
+		catch (Exception ex)
 		{
-			to -= (int_10 - int_19) / 2;
-			int_0 = to;
-			if (int_0 < 0)
-				int_0 = 0;
-			if (int_0 > int_12)
-				int_0 = int_12;
+			GClass36.smethod_0(ex.StackTrace);
+		}
+		return null;
+	}
+
+	public static byte[] smethod_3(sbyte[] var)
+	{
+		byte[] array = new byte[var.Length];
+		for (int i = 0; i < var.Length; i++)
+		{
+			if (var[i] <= 0)
+				array[i] = (byte)(var[i] + 256);
+			else
+				array[i] = (byte)var[i];
+		}
+		return array;
+	}
+
+	public static void smethod_4(string filename, string data)
+	{
+		GClass46 gClass = new GClass46();
+		try
+		{
+			gClass.method_6(data);
+			smethod_0(filename, gClass.method_3());
+			gClass.method_4();
+		}
+		catch (Exception ex)
+		{
+			GClass36.smethod_0(ex.StackTrace);
 		}
 	}
 
-	public static GClass1 smethod_0()
+	private static void smethod_5(string string_1, sbyte[] sbyte_1)
 	{
-		if (gclass1_0 == null)
-			gclass1_0 = new GClass1();
-		return gclass1_0;
+		if (int_0 != 0)
+		{
+			Debug.LogError("Cannot save RMS " + string_1 + " because current is saving " + string_0);
+			return;
+		}
+		string_0 = string_1;
+		sbyte_0 = sbyte_1;
+		int_0 = 2;
+		int i;
+		for (i = 0; i < 500; i++)
+		{
+			Thread.Sleep(5);
+			if (int_0 == 0)
+				break;
+		}
+		if (i == 500)
+			Debug.LogError("TOO LONG TO SAVE RMS " + string_1);
+	}
+
+	private static sbyte[] smethod_6(string string_1)
+	{
+		if (int_0 != 0)
+		{
+			Debug.LogError("Cannot load RMS " + string_1 + " because current is loading " + string_0);
+			return null;
+		}
+		string_0 = string_1;
+		sbyte_0 = null;
+		int_0 = 3;
+		int i;
+		for (i = 0; i < 500; i++)
+		{
+			Thread.Sleep(5);
+			if (int_0 == 0)
+				break;
+		}
+		if (i == 500)
+			Debug.LogError("TOO LONG TO LOAD RMS " + string_1);
+		return sbyte_0;
+	}
+
+	public static void smethod_7()
+	{
+		if (int_0 == 2)
+		{
+			int_0 = 1;
+			smethod_11(string_0, sbyte_0);
+			int_0 = 0;
+		}
+		else if (int_0 == 3)
+		{
+			int_0 = 1;
+			sbyte_0 = smethod_12(string_0);
+			int_0 = 0;
+		}
+	}
+
+	public static int smethod_8(string file)
+	{
+		sbyte[] array = smethod_1(file);
+		return (array == null) ? (-1) : array[0];
+	}
+
+	public static void smethod_9(string file, int x)
+	{
+		try
+		{
+			smethod_0(file, new sbyte[1] { (sbyte)x });
+		}
+		catch (Exception)
+		{
+		}
+	}
+
+	public static string smethod_10()
+	{
+		return (GClass122.int_12 == 2) ? "Data/GameData/RMS2" : "Data/GameData/RMS1";
+	}
+
+	private static void smethod_11(string string_1, sbyte[] sbyte_1)
+	{
+		string text = smethod_10() + "/" + string_1;
+		FileStream fileStream = new FileStream(text, FileMode.Create);
+		fileStream.Write(GClass59.smethod_1(sbyte_1), 0, sbyte_1.Length);
+		fileStream.Flush();
+		fileStream.Close();
+		Main.setBackupIcloud(text);
+	}
+
+	private static sbyte[] smethod_12(string string_1)
+	{
+		try
+		{
+			FileStream fileStream = new FileStream(smethod_10() + "/" + string_1, FileMode.Open);
+			byte[] array = new byte[fileStream.Length];
+			fileStream.Read(array, 0, array.Length);
+			fileStream.Close();
+			GClass59.smethod_0(array);
+			return GClass59.smethod_0(array);
+		}
+		catch (Exception)
+		{
+			return null;
+		}
+	}
+
+	public static void smethod_13()
+	{
+		GClass36.smethod_4("clean rms");
+		FileInfo[] files = new DirectoryInfo(smethod_10() + "/").GetFiles();
+		for (int i = 0; i < files.Length; i++)
+		{
+			files[i].Delete();
+		}
+	}
+
+	public static void smethod_14(string path)
+	{
+		try
+		{
+			File.Delete(smethod_10() + "/" + path);
+		}
+		catch (Exception)
+		{
+		}
+	}
+
+	public static string smethod_15(byte[] ba)
+	{
+		return BitConverter.ToString(ba).Replace("-", "");
+	}
+
+	public static byte[] smethod_16(string hex)
+	{
+		int length = hex.Length;
+		byte[] array = new byte[length / 2];
+		for (int i = 0; i < length; i += 2)
+		{
+			array[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+		}
+		return array;
+	}
+
+	public static void smethod_17(string name)
+	{
+		try
+		{
+			PlayerPrefs.DeleteKey(name);
+		}
+		catch (Exception ex)
+		{
+			GClass36.smethod_0("loi xoa RMS --------------------------" + ex.ToString());
+		}
+	}
+
+	public static void smethod_18()
+	{
+		smethod_17("data");
+		smethod_17("dataVersion");
+		smethod_17("map");
+		smethod_17("mapVersion");
+		smethod_17("skill");
+		smethod_17("killVersion");
+		smethod_17("item");
+		smethod_17("itemVersion");
+	}
+
+	public static void smethod_19(string strID)
+	{
+		smethod_4("NRIPlink", strID);
+	}
+
+	public static string smethod_20()
+	{
+		string text = smethod_2("NRIPlink");
+		if (text == null)
+			return null;
+		return text;
 	}
 }

@@ -1,159 +1,80 @@
-using System;
-using System.Threading;
-using UnityEngine;
-
 public class GClass188
 {
-	public GClass145 gclass145_0;
+	public static int int_0 = GClass122.int_4 | GClass122.int_0;
 
-	public static GClass188 gclass188_0;
+	public static int int_1 = GClass122.int_4 | GClass122.int_2;
 
-	private static int int_0;
+	public static int int_2 = GClass122.int_4 | GClass122.int_3;
 
-	private static string string_0;
+	public static int int_3 = GClass122.int_5 | GClass122.int_0;
 
-	public GClass188(string filename)
+	public static int int_4 = GClass122.int_5 | GClass122.int_2;
+
+	public static int int_5 = GClass122.int_5 | GClass122.int_3;
+
+	public static int int_6 = GClass122.int_1 | GClass122.int_0;
+
+	public static int int_7 = GClass122.int_1 | GClass122.int_2;
+
+	public const string string_0 = "skill";
+
+	public const string string_1 = "versionUpdate";
+
+	public const string string_2 = "keyskill";
+
+	public const string string_3 = "item";
+
+	public const int int_8 = 0;
+
+	public const int int_9 = 1;
+
+	public const int int_10 = 2;
+
+	public const int int_11 = 3;
+
+	public const int int_12 = 4;
+
+	public const int int_13 = 100;
+
+	public const int int_14 = 3;
+
+	public const int int_15 = 0;
+
+	public const int int_16 = 1;
+
+	public const int int_17 = 2;
+
+	public const int int_18 = 3;
+
+	public const int int_19 = 4;
+
+	public const int int_20 = 5;
+
+	public const int int_21 = 6;
+
+	public const int int_22 = 7;
+
+	public const int int_23 = 8;
+
+	public const int int_24 = 9;
+
+	public const int int_25 = 11;
+
+	public const int int_26 = 15;
+
+	public const int int_27 = 1;
+
+	public const int int_28 = 2;
+
+	public const int int_29 = 3;
+
+	public const int int_30 = 4;
+
+	public const int int_31 = 5;
+
+	public static int[] int_32 = new int[17]
 	{
-		gclass145_0 = new GClass145(GClass143.smethod_0(((TextAsset)Resources.Load(filename, typeof(TextAsset))).bytes));
-	}
-
-	public GClass188(sbyte[] data)
-	{
-		gclass145_0 = new GClass145(data);
-	}
-
-	public static void smethod_0()
-	{
-		if (int_0 == 2)
-		{
-			int_0 = 1;
-			gclass188_0 = smethod_3(string_0);
-			int_0 = 0;
-		}
-	}
-
-	public static GClass188 smethod_1(string filename)
-	{
-		return smethod_3(filename);
-	}
-
-	private static GClass188 smethod_2(string string_1)
-	{
-		if (int_0 != 0)
-		{
-			for (int i = 0; i < 500; i++)
-			{
-				Thread.Sleep(5);
-				if (int_0 == 0)
-					break;
-			}
-			if (int_0 != 0)
-			{
-				Debug.LogError("CANNOT GET INPUTSTREAM " + string_1 + " WHEN GETTING " + string_0);
-				return null;
-			}
-		}
-		gclass188_0 = null;
-		string_0 = string_1;
-		int_0 = 2;
-		int j;
-		for (j = 0; j < 500; j++)
-		{
-			Thread.Sleep(5);
-			if (int_0 == 0)
-				break;
-		}
-		if (j != 500)
-			return gclass188_0;
-		Debug.LogError("TOO LONG FOR CREATE INPUTSTREAM " + string_1);
-		int_0 = 0;
-		return null;
-	}
-
-	private static GClass188 smethod_3(string string_1)
-	{
-		try
-		{
-			return new GClass188(string_1);
-		}
-		catch (Exception)
-		{
-			return null;
-		}
-	}
-
-	public short method_0()
-	{
-		return gclass145_0.method_6();
-	}
-
-	public int method_1()
-	{
-		return gclass145_0.method_8();
-	}
-
-	public int method_2()
-	{
-		return gclass145_0.method_5();
-	}
-
-	public void method_3(ref sbyte[] data)
-	{
-		gclass145_0.method_16(ref data);
-	}
-
-	public void method_4()
-	{
-		gclass145_0.method_19();
-	}
-
-	public void method_5()
-	{
-		gclass145_0.method_19();
-	}
-
-	public string method_6()
-	{
-		return gclass145_0.method_14();
-	}
-
-	public sbyte method_7()
-	{
-		return gclass145_0.method_2();
-	}
-
-	public long method_8()
-	{
-		return gclass145_0.method_9();
-	}
-
-	public bool method_9()
-	{
-		return gclass145_0.method_11();
-	}
-
-	public int method_10()
-	{
-		return (byte)gclass145_0.method_2();
-	}
-
-	public int method_11()
-	{
-		return gclass145_0.method_7();
-	}
-
-	public void method_12(ref sbyte[] data)
-	{
-		gclass145_0.method_16(ref data);
-	}
-
-	public int method_13()
-	{
-		return gclass145_0.method_18();
-	}
-
-	internal void method_14(ref sbyte[] sbyte_0, int int_1, int int_2)
-	{
-		throw new NotImplementedException();
-	}
+		1618168, 1938102, 43488, 16316528, 1628316, 3270903, 3576979, 6999725, 14594155, 8562616,
+		16026508, 1052688, 13952747, 15268088, 1628316, 2631752, 4079166
+	};
 }

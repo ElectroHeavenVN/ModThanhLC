@@ -1,231 +1,350 @@
 using System;
-using ns1;
 
 public class GClass72
 {
-	public static int[][] int_0;
+	public GClass70 gclass70_0;
 
-	public static GClass72 gclass72_0;
+	public GClass8[] gclass8_0;
 
-	public static GClass20[] gclass20_0;
+	public GClass5[] gclass5_0;
 
-	public static GClass26[] gclass26_0;
+	public short[] short_0;
 
-	public static GClass122 gclass122_0 = new GClass122();
+	public short[][] short_1 = new short[16][];
 
-	public static GClass20 gclass20_1 = null;
+	public int int_0;
 
-	public static sbyte[] sbyte_0;
+	public int int_1;
 
-	public static int int_1;
+	public int int_2;
 
-	public static short short_0;
+	public int int_3;
 
-	public GClass72()
-	{
-		method_1();
-	}
-
-	public static void smethod_0()
-	{
-		if (gclass20_0 == null)
-			gclass20_0 = new GClass20[5]
-			{
-				GClass14.smethod_42("/img/Big0.png"),
-				GClass14.smethod_42("/img/Big1.png"),
-				GClass14.smethod_42("/img/Big2.png"),
-				GClass14.smethod_42("/img/Big3.png"),
-				GClass14.smethod_42("/img/Big4.png")
-			};
-	}
-
-	public static void smethod_1()
-	{
-		gclass20_0 = null;
-		GClass77.smethod_26();
-	}
-
-	public static void smethod_2()
-	{
-		gclass20_1 = GClass20.smethod_9(new int[1], 1, 1, true);
-	}
-
-	public static void smethod_3()
-	{
-		gclass72_0 = null;
-		gclass72_0 = new GClass72();
-	}
-
-	public void method_0(byte[] data)
-	{
-	}
-
-	public void method_1()
+	public GClass8 method_0(sbyte id)
 	{
 		int num = 0;
+		while (true)
+		{
+			if (num < gclass8_0.Length)
+			{
+				if (gclass8_0[num].int_0 == id)
+					break;
+				num++;
+				continue;
+			}
+			return null;
+		}
+		return gclass8_0[num];
+	}
+
+	public short[] method_1()
+	{
+		return short_0;
+	}
+
+	public short[] method_2(int index)
+	{
+		if (index >= short_1.Length)
+			index = 0;
+		if (short_1[index] == null)
+			return new short[1];
+		return short_1[index];
+	}
+
+	public void method_3(string patch)
+	{
+		GClass108 gClass = null;
 		try
 		{
-			GClass188 gClass = new GClass188(GClass141.smethod_1("NR_image"));
-			short num2 = gClass.method_0();
-			int_0 = new int[num2][];
-			for (int i = 0; i < int_0.Length; i++)
+			gClass = GClass200.smethod_0(patch);
+		}
+		catch (Exception)
+		{
+			return;
+		}
+		method_6(gClass.gclass100_0);
+	}
+
+	public void method_4(string patch)
+	{
+		GClass108 gClass = null;
+		try
+		{
+			gClass = GClass200.smethod_0(patch);
+		}
+		catch (Exception)
+		{
+			return;
+		}
+		method_5(gClass.gclass100_0);
+	}
+
+	public void method_5(GClass100 msg)
+	{
+		int num = 0;
+		int num2 = 0;
+		int num3 = 0;
+		int num4 = 0;
+		try
+		{
+			sbyte b = msg.method_2();
+			GClass50.smethod_8("size IMG==========" + b);
+			gclass8_0 = new GClass8[b];
+			for (int i = 0; i < b; i++)
 			{
-				int_0[i] = new int[5];
+				gclass8_0[i] = new GClass8();
+				gclass8_0[i].int_0 = msg.method_2();
+				gclass8_0[i].int_3 = msg.method_5();
+				gclass8_0[i].int_4 = msg.method_5();
+				gclass8_0[i].int_5 = msg.method_5();
+				gclass8_0[i].int_6 = msg.method_5();
 			}
-			for (int j = 0; j < num2; j++)
+			gclass5_0 = new GClass5[msg.method_6()];
+			for (int j = 0; j < gclass5_0.Length; j++)
 			{
-				num++;
-				int_0[j][0] = gClass.method_10();
-				int_0[j][1] = gClass.method_0();
-				int_0[j][2] = gClass.method_0();
-				int_0[j][3] = gClass.method_0();
-				int_0[j][4] = gClass.method_0();
+				gclass5_0[j] = new GClass5();
+				sbyte b2 = msg.method_2();
+				gclass5_0[j].short_0 = new short[b2];
+				gclass5_0[j].short_1 = new short[b2];
+				gclass5_0[j].sbyte_0 = new sbyte[b2];
+				for (int k = 0; k < b2; k++)
+				{
+					gclass5_0[j].short_0[k] = msg.method_6();
+					gclass5_0[j].short_1[k] = msg.method_6();
+					gclass5_0[j].sbyte_0[k] = msg.method_2();
+					if (j == 0)
+					{
+						if (num > gclass5_0[j].short_0[k])
+							num = gclass5_0[j].short_0[k];
+						if (num2 > gclass5_0[j].short_1[k])
+							num2 = gclass5_0[j].short_1[k];
+						if (num3 < gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5)
+							num3 = gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5;
+						if (num4 < gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6)
+							num4 = gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6;
+						int_2 = num3 - num;
+						int_3 = num4 - num2;
+					}
+				}
+			}
+			short_0 = new short[msg.method_6()];
+			for (int l = 0; l < short_0.Length; l++)
+			{
+				short_0[l] = msg.method_6();
 			}
 		}
 		catch (Exception ex)
 		{
-			GClass92.smethod_4("Loi readImage: " + ex.ToString() + "i= " + num);
+			ex.StackTrace.ToString();
+			GClass50.smethod_8("1");
 		}
 	}
 
-	public static void smethod_4()
-	{
-	}
-
-	public static void smethod_5(int id)
-	{
-		GClass191.smethod_8("is request =" + id + " zoom=" + GClass193.int_12);
-		GClass20 gClass = GClass14.smethod_43("/SmallImage/Small" + id + ".png");
-		if (gClass == null)
-		{
-			bool flag = false;
-			sbyte[] array = GClass141.smethod_1(GClass193.int_12 + "Small" + id);
-			if (array == null)
-				flag = true;
-			else
-			{
-				if (sbyte_0 != null && array.Length % 127 != sbyte_0[id])
-					flag = true;
-				if (!flag)
-				{
-					GClass20 gClass2 = GClass20.smethod_6(array, 0, array.Length);
-					if (gClass2 == null)
-						flag = true;
-					else
-						gclass26_0[id] = new GClass26(gClass2, id);
-				}
-			}
-			if (flag)
-			{
-				gclass26_0[id] = new GClass26(gclass20_1, id);
-				GClass2.smethod_0().method_105(id);
-			}
-		}
-		else
-			gclass26_0[id] = new GClass26(gClass, id);
-	}
-
-	public static void smethod_6(GClass193 g, int id, int x, int y, int transform, int anchor)
-	{
-		if (GClass66.smethod_0().bool_21)
-			return;
-		if (gclass20_0 != null)
-		{
-			if (int_0 == null)
-			{
-				if (GClass14.gclass160_0 != GClass167.smethod_8())
-				{
-					GClass26 gClass = gclass26_0[id];
-					if (gClass != null)
-						gClass.method_0(g, transform, x, y, anchor);
-					else
-						smethod_5(id);
-				}
-			}
-			else if (id >= int_0.Length || int_0[id][1] >= 256 || int_0[id][3] >= 256 || int_0[id][2] >= 256 || int_0[id][4] >= 256)
-			{
-				GClass26 gClass2 = gclass26_0[id];
-				if (gClass2 == null)
-					smethod_5(id);
-				else
-					gClass2.method_0(g, transform, x, y, anchor);
-			}
-			else if (gclass20_0[int_0[id][0]] != null)
-			{
-				g.method_23(gclass20_0[int_0[id][0]], int_0[id][1], int_0[id][2], int_0[id][3], int_0[id][4], transform, x, y, anchor);
-			}
-		}
-		else
-		{
-			GClass26 gClass3 = gclass26_0[id];
-			if (gClass3 == null)
-				smethod_5(id);
-			else
-				g.method_46(gClass3, 0, 0, GClass193.smethod_0(gClass3.gclass20_0), GClass193.smethod_1(gClass3.gclass20_0), transform, x, y, anchor);
-		}
-	}
-
-	public static void smethod_7(GClass193 g, int id, int f, int x, int y, int w, int h, int transform, int anchor)
-	{
-		if (gclass20_0 != null)
-		{
-			if (int_0 == null)
-			{
-				if (GClass14.gclass160_0 != GClass167.smethod_8())
-				{
-					GClass26 gClass = gclass26_0[id];
-					if (gClass == null)
-						smethod_5(id);
-					else
-						gClass.method_1(g, transform, f, x, y, w, h, anchor);
-				}
-			}
-			else if (id >= int_0.Length || int_0[id] == null || int_0[id][1] >= 256 || int_0[id][3] >= 256 || int_0[id][2] >= 256 || int_0[id][4] >= 256)
-			{
-				GClass26 gClass2 = gclass26_0[id];
-				if (gClass2 != null)
-					gClass2.method_1(g, transform, f, x, y, w, h, anchor);
-				else
-					smethod_5(id);
-			}
-			else if (int_0[id][0] == 4 || gclass20_0[int_0[id][0]] == null)
-			{
-				GClass26 gClass3 = gclass26_0[id];
-				if (gClass3 != null)
-					gClass3.method_1(g, transform, f, x, y, w, h, anchor);
-				else
-					smethod_5(id);
-			}
-			else
-			{
-				g.method_23(gclass20_0[int_0[id][0]], 0, f * w, w, h, transform, x, y, anchor);
-			}
-		}
-		else
-		{
-			GClass26 gClass4 = gclass26_0[id];
-			if (gClass4 != null)
-				g.method_23(gClass4.gclass20_0, 0, f * w, w, h, transform, x, y, anchor);
-			else
-				smethod_5(id);
-		}
-	}
-
-	public static void smethod_8()
+	public void method_6(GClass100 iss)
 	{
 		int num = 0;
-		if (GClass14.int_8 % 1000 != 0)
-			return;
-		for (int i = 0; i < gclass26_0.Length; i++)
+		int num2 = 0;
+		int num3 = 0;
+		int num4 = 0;
+		try
 		{
-			if (gclass26_0[i] != null)
+			sbyte b = iss.method_2();
+			gclass8_0 = new GClass8[b];
+			for (int i = 0; i < b; i++)
 			{
-				num++;
-				gclass26_0[i].method_3();
-				int_1++;
+				gclass8_0[i] = new GClass8();
+				gclass8_0[i].int_0 = iss.method_2();
+				gclass8_0[i].int_3 = iss.method_5();
+				gclass8_0[i].int_4 = iss.method_5();
+				gclass8_0[i].int_5 = iss.method_5();
+				gclass8_0[i].int_6 = iss.method_5();
+			}
+			short num5 = iss.method_6();
+			gclass5_0 = new GClass5[num5];
+			for (int j = 0; j < num5; j++)
+			{
+				gclass5_0[j] = new GClass5();
+				sbyte b2 = iss.method_2();
+				gclass5_0[j].short_0 = new short[b2];
+				gclass5_0[j].short_1 = new short[b2];
+				gclass5_0[j].sbyte_0 = new sbyte[b2];
+				for (int k = 0; k < b2; k++)
+				{
+					gclass5_0[j].short_0[k] = iss.method_6();
+					gclass5_0[j].short_1[k] = iss.method_6();
+					gclass5_0[j].sbyte_0[k] = iss.method_2();
+					if (j == 0)
+					{
+						if (num > gclass5_0[j].short_0[k])
+							num = gclass5_0[j].short_0[k];
+						if (num2 > gclass5_0[j].short_1[k])
+							num2 = gclass5_0[j].short_1[k];
+						if (num3 < gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5)
+							num3 = gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5;
+						if (num4 < gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6)
+							num4 = gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6;
+						int_2 = num3 - num;
+						int_3 = num4 - num2;
+					}
+				}
+			}
+			short num6 = 0;
+			num6 = iss.method_6();
+			short_0 = new short[num6];
+			if (int_0 < 201)
+			{
+				for (int l = 0; l < num6; l++)
+				{
+					short_0[l] = iss.method_6();
+				}
+				return;
+			}
+			short num7 = 0;
+			short[] array = new short[num6];
+			int num8 = 0;
+			string text = "";
+			bool flag = false;
+			for (int m = 0; m < num6; m++)
+			{
+				short num9 = iss.method_6();
+				text = text + num9 + ",";
+				short_0[m] = num9;
+				if (num9 + 500 < 500)
+				{
+					num7 = (short)GClass50.smethod_28(num9 + 500);
+					short_1[num7] = new short[num8];
+					Array.Copy(array, 0, short_1[num7], 0, num8);
+					num8 = 0;
+				}
+				else
+				{
+					array[num8++] = num9;
+					flag = true;
+				}
+			}
+			if (!flag)
+			{
+				short_1[0] = new short[num8];
+				Array.Copy(array, 0, short_1[num7], 0, num8);
+				return;
+			}
+			for (int n = 0; n < 16; n++)
+			{
+				if (short_1[n] == null)
+					short_1[n] = short_1[2];
 			}
 		}
-		if (num > 200 && GClass14.bool_1)
-			gclass26_0 = new GClass26[short_0];
+		catch (Exception ex)
+		{
+			GClass36.smethod_2("LOI TAI readData cua EffectDAta" + ex.ToString());
+		}
+	}
+
+	public void method_7(sbyte[] data)
+	{
+		method_6(new GClass100(data));
+	}
+
+	public void method_8(sbyte[] data, sbyte typeread)
+	{
+		method_10(new GClass100(data), typeread);
+	}
+
+	public void method_9(GClass122 g, int f, int x, int y, int trans, int layer)
+	{
+		if (gclass5_0 == null || gclass5_0.Length == 0)
+			return;
+		GClass5 gClass = gclass5_0[f];
+		for (int i = 0; i < gClass.short_0.Length; i++)
+		{
+			GClass8 gClass2 = method_0(gClass.sbyte_0[i]);
+			try
+			{
+				switch (trans)
+				{
+				case -1:
+					g.method_23(gclass70_0, gClass2.int_3, gClass2.int_4, gClass2.int_5, gClass2.int_6, 0, x + gClass.short_0[i], y + gClass.short_1[i], 0);
+					break;
+				case 0:
+					g.method_23(gclass70_0, gClass2.int_3, gClass2.int_4, gClass2.int_5, gClass2.int_6, 0, x + gClass.short_0[i], y + gClass.short_1[i] - ((layer < 4 && layer > 0) ? GClass73.int_58 : 0), 0);
+					break;
+				case 1:
+					g.method_23(gclass70_0, gClass2.int_3, gClass2.int_4, gClass2.int_5, gClass2.int_6, 2, x - gClass.short_0[i], y + gClass.short_1[i] - ((layer < 4 && layer > 0) ? GClass73.int_58 : 0), GClass188.int_2);
+					break;
+				case 2:
+					g.method_23(gclass70_0, gClass2.int_3, gClass2.int_4, gClass2.int_5, gClass2.int_6, 7, x - gClass.short_0[i], y + gClass.short_1[i] - ((layer < 4 && layer > 0) ? GClass73.int_58 : 0), GClass188.int_6);
+					break;
+				}
+			}
+			catch (Exception)
+			{
+			}
+		}
+	}
+
+	public void method_10(GClass100 msg, sbyte typeread)
+	{
+		int num = 0;
+		int num2 = 0;
+		int num3 = 0;
+		int num4 = 0;
+		try
+		{
+			sbyte b = msg.method_2();
+			gclass8_0 = new GClass8[b];
+			for (int i = 0; i < b; i++)
+			{
+				gclass8_0[i] = new GClass8();
+				gclass8_0[i].int_0 = msg.method_2();
+				if (typeread != 1)
+				{
+					gclass8_0[i].int_3 = msg.method_6();
+					gclass8_0[i].int_4 = msg.method_6();
+				}
+				else
+				{
+					gclass8_0[i].int_3 = msg.method_5();
+					gclass8_0[i].int_4 = msg.method_5();
+				}
+				gclass8_0[i].int_5 = msg.method_5();
+				gclass8_0[i].int_6 = msg.method_5();
+			}
+			gclass5_0 = new GClass5[msg.method_6()];
+			for (int j = 0; j < gclass5_0.Length; j++)
+			{
+				gclass5_0[j] = new GClass5();
+				sbyte b2 = msg.method_2();
+				gclass5_0[j].short_0 = new short[b2];
+				gclass5_0[j].short_1 = new short[b2];
+				gclass5_0[j].sbyte_0 = new sbyte[b2];
+				for (int k = 0; k < b2; k++)
+				{
+					gclass5_0[j].short_0[k] = msg.method_6();
+					gclass5_0[j].short_1[k] = msg.method_6();
+					gclass5_0[j].sbyte_0[k] = msg.method_2();
+					if (j == 0)
+					{
+						if (num > gclass5_0[j].short_0[k])
+							num = gclass5_0[j].short_0[k];
+						if (num2 > gclass5_0[j].short_1[k])
+							num2 = gclass5_0[j].short_1[k];
+						if (num3 < gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5)
+							num3 = gclass5_0[j].short_0[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_5;
+						if (num4 < gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6)
+							num4 = gclass5_0[j].short_1[k] + gclass8_0[gclass5_0[j].sbyte_0[k]].int_6;
+						int_2 = num3 - num;
+						int_3 = num4 - num2;
+					}
+				}
+			}
+			short_0 = new short[msg.method_6()];
+			for (int l = 0; l < short_0.Length; l++)
+			{
+				short_0[l] = msg.method_6();
+			}
+		}
+		catch (Exception)
+		{
+		}
 	}
 }

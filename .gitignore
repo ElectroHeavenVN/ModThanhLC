@@ -366,12 +366,9 @@ FodyWeavers.xsd
 output_log.txt
 Output/Data/Errors/*
 !Output/Data/Errors/.gitignore
-Output/Data/GameData/RMS1/*
+Output/Data/GameData/*
 !Output/Data/GameData/RMS1/2.3.7
-Output/Data/GameData/RMS2/*
 !Output/Data/GameData/RMS2/2.3.7
-Output/Data/logo.png
-Output/Data/wallpaper.png
 Output/Data/QLTK/key.ini
 Output/Data/QLTK/dataAccount.json
 Output/*.exe

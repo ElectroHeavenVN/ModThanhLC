@@ -1,6 +1,10 @@
 public interface GInterface3
 {
-	void onChatFromMe(string text, string to);
+	void onMessage(GClass208 message);
 
-	void onCancelChat();
+	void onConnectionFail(bool isMain);
+
+	void onDisconnected(bool isMain);
+
+	void onConnectOK(bool isMain);
 }

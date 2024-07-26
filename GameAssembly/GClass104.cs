@@ -1,791 +1,550 @@
-using System;
-using System.Collections;
-using UnityEngine;
-
-public class GClass104
+public class GClass104 : mResources
 {
-	public static int int_0 = 0;
-
-	public static int int_1 = 1;
-
-	public static int int_2 = 2;
-
-	public static int int_3 = 0;
-
-	public static int int_4 = 1;
-
-	public static int int_5 = 2;
-
-	public static int int_6 = 3;
-
-	public static int int_7 = 4;
-
-	public static int int_8 = 5;
-
-	public static int int_9 = 6;
-
-	public static int int_10 = 7;
-
-	public static int int_11 = 8;
-
-	public static int int_12 = 9;
-
-	public static int int_13 = 10;
-
-	private int int_14;
-
-	private GClass20 gclass20_0;
-
-	private string string_0;
-
-	private int[][] int_15;
-
-	public static int int_16;
-
-	public static int[] int_17 = new int[31]
-	{
-		0, 16711680, 6520319, 16777215, 16776960, 5449989, 21285, 52224, 7386228, 16771788,
-		0, 65535, 21285, 16776960, 5592405, 16742263, 33023, 8701737, 15723503, 7999781,
-		16768815, 14961237, 4124899, 4671303, 16096312, 16711680, 16755200, 52224, 16777215, 6520319,
-		16096312
-	};
-
-	public static GClass104 gclass104_0;
-
-	public static GClass104 gclass104_1;
-
-	public static GClass104 gclass104_2;
-
-	public static GClass104 gclass104_3;
-
-	public static GClass104 gclass104_4;
-
-	public static GClass104 gclass104_5;
-
-	public static GClass104 gclass104_6;
-
-	public static GClass104 gclass104_7;
-
-	public static GClass104 gclass104_8;
-
-	public static GClass104 gclass104_9;
-
-	public static GClass104 gclass104_10;
-
-	public static GClass104 gclass104_11;
-
-	public static GClass104 gclass104_12;
-
-	public static GClass104 gclass104_13;
-
-	public static GClass104 gclass104_14;
-
-	public static GClass104 gclass104_15;
-
-	public static GClass104 gclass104_16;
-
-	public static GClass104 gclass104_17;
-
-	public static GClass104 gclass104_18;
-
-	public static GClass104 gclass104_19;
-
-	public static GClass104 gclass104_20;
-
-	public static GClass104 gclass104_21;
-
-	public static GClass104 gclass104_22;
-
-	public static GClass104 gclass104_23;
-
-	public static GClass104 gclass104_24;
-
-	public static GClass104 gclass104_25;
-
-	public static GClass104 gclass104_26;
-
-	public static GClass104 gclass104_27;
-
-	public static GClass104 gclass104_28;
-
-	public static GClass104 gclass104_29;
-
-	public static GClass104 gclass104_30;
-
-	public static GClass104 gclass104_31;
-
-	public static GClass104 gclass104_32;
-
-	public static GClass104 gclass104_33;
-
-	public static GClass104 gclass104_34;
-
-	public static GClass104 gclass104_35;
-
-	public static GClass104 gclass104_36;
-
-	public static GClass104 gclass104_37;
-
-	public static GClass104 gclass104_38;
-
-	public static GClass104 gclass104_39;
-
-	public static GClass104 gclass104_40;
-
-	public static GClass104 gclass104_41;
-
-	public Font font_0;
-
-	private int int_18;
-
-	private int int_19;
-
-	public Color color_0 = Color.white;
-
-	public Color color_1 = Color.gray;
-
-	public sbyte sbyte_0;
-
-	public int int_20;
-
-	public string string_1 = "áàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴĐ";
-
-	public string string_2 = "\u00b8µ¶·¹\u00a8¾»¼½Æ©ÊÇÈÉËÐÌÎÏÑªÕÒÓÔÖÝ×ØÜÞãßáâä«èåæçé¬íêëìîóïñòô\u00adøõö÷ùýúûüþ®\u00b8µ¶·¹¡¾»¼½Æ¢ÊÇÈÉËÐÌÎÏÑ£ÕÒÓÔÖÝ×ØÜÞãßáâä¤èåæçé¥íêëìîóïñòô¦øõö÷ùýúûüþ§";
-
-	public const string string_3 = " 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW";
-
-	private int int_21;
-
-	private string string_4;
-
-	public GClass104(string strFont, string pathImage, string pathData, int space)
-	{
-		try
-		{
-			string_0 = strFont;
-			int_14 = space;
-			string_4 = pathImage;
-			GClass188 gClass = null;
-			method_22();
-			try
-			{
-				gClass = GClass79.smethod_0(pathData);
-				int_15 = new int[gClass.method_0()][];
-				for (int i = 0; i < int_15.Length; i++)
-				{
-					int_15[i] = new int[4];
-					int_15[i][0] = gClass.method_0();
-					int_15[i][1] = gClass.method_0();
-					int_15[i][2] = gClass.method_0();
-					int_15[i][3] = gClass.method_0();
-					method_0(int_15[i][3]);
-				}
-				gClass.method_4();
-			}
-			catch (Exception)
-			{
-				try
-				{
-					gClass.method_4();
-				}
-				catch (Exception ex)
-				{
-					ex.StackTrace.ToString();
-				}
-			}
-		}
-		catch (Exception ex3)
-		{
-			ex3.StackTrace.ToString();
-		}
-	}
-
-	public GClass104(sbyte id)
-	{
-		string text = "chelthm";
-		if ((id <= 0 || id >= 10) && id != 19)
-		{
-			if (id < 10 || id > 18)
-			{
-				if (id > 24)
-					text = "staccato";
-			}
-			else
-			{
-				text = "chelthm";
-				int_21 = 2;
-			}
-		}
-		else
-		{
-			int_21 = 1;
-			text = "barmeneb";
-		}
-		sbyte_0 = id;
-		font_0 = (Font)Resources.Load("FontSys/x" + GClass193.int_12 + "/" + text);
-		if (id < 25)
-		{
-			color_0 = method_5(id);
-			color_1 = method_5(id);
-		}
-		else
-		{
-			color_0 = method_2(id);
-			color_1 = method_2(id);
-		}
-		int_19 = method_18("o");
-	}
-
 	public static void smethod_0()
 	{
-		if (GClass193.int_12 != 1)
+		mResources.confirmChangeServer = "Apakah Anda ingin mengubah server?";
+		mResources.chooseDefaultsv = "Default server connect";
+		mResources.winLose = "Menang/Kehilangan: ";
+		mResources.learnSkill = "Pergi ke Whis (Beerus Planet) untuk mempelajari keterampilan";
+		mResources.updSkill = "Saat mencapai kemahiran maksimum, pergi ke Whis (Beerus Planet) untuk meningkatkan keterampilan Anda";
+		mResources.proficiency = "Kecakapan";
+		mResources.delacc = "Delete account";
+		mResources.notiINAPP = "Anda membeli banyak permata hari ini. Mari kita coba lagi besok!";
+		mResources.notiRuby = "Saat menjual dengan sukses, Anda akan menerima Ruby non Gem. Apakah Anda ingin melanjutkan menyerahkan?";
+		mResources.equip = "Mengalati";
+		mResources.unlock = "Membuka kunci";
+		mResources.radaCard = "Buku koleksi";
+		mResources.not_enough_money_1 = "Uang tidak";
+		mResources.functionMaintain1 = "Fungsi dalam maintenance.";
+		mResources.napngoc = "Beli lebih gems";
+		mResources.nhatvatpham = "Yakin ingin memilih barang ini ?";
+		mResources.tang = "Tingkat";
+		mResources.kquaVongQuay = "Hasil angka keberuntungan";
+		mResources.quayso = "Siapa yang harus hipilih";
+		mResources.gameInfo = "Menu Mod";
+		mResources.useGem = "Auto terlahir kembali";
+		mResources.autoFunction = "Auto fungsi";
+		mResources.sure_fusion = "Apakah kamu yakin fusion selamanya dengan muridmu? Kamu akan kehilangan muridmu dan perlengkapan semua murid, dan semua power muridmu kan ditambahkan ke potensial anda";
+		mResources.fusionForever = "Fusion selama-lamanya";
+		mResources.fusion = "Fusion dance";
+		mResources.nhanngoc = "Receive gem";
+		mResources.vuilongnhapduthongtin = "Masukkan informasi lengkap";
+		mResources.choitiep = "Terus";
+		mResources.gohome = "Pulang";
+		mResources.status = "Status";
+		mResources.attack = "Serang";
+		mResources.defend = "Lindungi";
+		mResources.follow = "Ikut";
+		mResources.pet = "Murid";
+		mResources.maychutathoacmatsong = "Koneksi gagal, harap coba kembali";
+		mResources.cauhinhthap = "Grafis kurang";
+		mResources.cauhinhcao = "Grafik tinggi";
+		mResources.taidulieu = "Download";
+		mResources.xoadulieu = "Hapus data";
+		mResources.deletaDataNote = "Kamu harus manghapus data ketika data game error. Setelah selesai manghapus, kamu harus download data lagi untuk bermain.";
+		mResources.huy = "Batal";
+		mResources.choigame = "Main game";
+		mResources.taidulieudechoi = "Harap download data untuk main";
+		mResources.chuacotaikhoan = "Tidak memiliki account";
+		mResources.combineSpell = "Abracadabra...";
+		mResources.combineSuccess = "Selamat sayangku";
+		mResources.combineFail = "Semoga beruntung lain kali sayangku";
+		mResources.fasterQuestion = "Apakah kamu ingin ke masa depan dengan 1 gem?";
+		mResources.faster = "Naikkan kecepatan";
+		mResources.remain = "Sisa";
+		mResources.turnOnAnalog = "Nyalakan analog";
+		mResources.turnOffAnalog = "Matikan analog";
+		mResources.analog = "Analog";
+		mResources.inventory_Pass = "Persediaan Sandi";
+		mResources.input_Inventory_Pass = "Masukkan password keamanan";
+		mResources.input_Inventory_Pass_wrong = "Password keamanan harus berupa 6 angka";
+		mResources.regNote = "Harap masukkan nomor HP atau email, kemudian masukkan password untuk membuat account baru";
+		mResources.note = "Kamu akan kehilangan account kamu selamanya jika kamu berganti ke account yang lain. Apakah kamu setuju?";
+		mResources.REGISTOPROTECT = "Daftar untuk melindungi account";
+		mResources.finishBomong = "Kamu harus menyelesaikan misi mencari Dragon Ball bintang 6 untuk recharge";
+		mResources.charger = "Beli lebih gems";
+		mResources.notYetSell = "Tidak ada item untuk dibeli";
+		mResources.getUp = "Tekan atas untuk mendapatkan lebih banyak";
+		mResources.getDown = "Tekan bawah untuk mendapatkan lebih banyak";
+		mResources.page = "Halaman";
+		mResources.upTop = "Ke atas";
+		mResources.num = "Tidak lazim";
+		mResources.kiguiXu = "Serahkan dengan\ngold";
+		mResources.kiguiLuong = "Beri dengan gem";
+		mResources.kiguiXuchat = "Beri dengan gold";
+		mResources.kiguiLuongchat = "Serahkan dengan\ngem";
+		mResources.huykigui = "Batal\nmenyerahkan";
+		mResources.nhantien = "Ambil\nuang";
+		mResources.daban = "Terjual";
+		mResources.dangban = "Menjual";
+		mResources.kigui = "Serahkan";
+		mResources.turnOffSound = "Swara";
+		mResources.turnOnSound = "Swara";
+		mResources.no_enemy = "Tidak ada musuh";
+		mResources.selectServer2 = "Pilih server";
+		mResources.rank = "Peringkat";
+		mResources.active_point = " Active point ";
+		mResources.REGISTERING = "Mendaftar";
+		mResources.SENDINGMSG = "Mengirim pesan...";
+		mResources.SENTMSG = "Pesan terkirim, harap tunggu konfirmasi";
+		mResources.NOSENDMSG = "Pesan tidak bisa dikirim. Harap periksa account anda dan mulai kembali game-nya";
+		mResources.MOVEFORPET = "User untuk\nmurid";
+		mResources.sendMsgSuccess = "Pesan terkirim";
+		mResources.cannotSendMsg = "Pesan tidak bisa dikirim";
+		mResources.sendGuessMsgSuccess = "Selamat, kamu baru saja berhasil mengirim pesan yang diprediksi.";
+		mResources.sendMsgFail = "Pengiriman pesan gagal.";
+		mResources.ALERT_PRIVATE_PASS_1 = "Password harus sepanjang 6 karakter (huruf)";
+		mResources.ALERT_PRIVATE_PASS_2 = "Masukkan nomor untuk password pribadi saja";
+		mResources.INPUT_PRIVATE_PASS = "Masukkan password pribadi";
+		mResources.change_account = "Pilih akun";
+		mResources.alreadyHadAccount1 = "Apakah kamu telah bermain dan memiliki account pada server Dragon Ball Online sebelumnya?";
+		mResources.alreadyHadAccount2 = "sebelumnya?";
+		mResources.userBlank = "Email atau nomor HP tidak dimasukkan";
+		mResources.passwordBlank = "Password tidak dimasukkan";
+		mResources.accTooShort = "Nama account harus lebih panjang dari 5 karakter";
+		mResources.phoneInvalid = "Nomor HP tidak berlaku. Harap masukkan dengan format berikut: 0912345678 atau 84918765432";
+		mResources.emailInvalid = "Email tidak berlaku. Harap masukkan seperti format berikut: yournamehere@yahoo.com atau yournamehere@gmail.com";
+		mResources.registerNewAcc = "Daftarkan account\nbaru\n";
+		mResources.selectServer = "Pilih\nserver";
+		mResources.forgetPass = "Lupa pass\n";
+		mResources.password = "Password";
+		mResources.LOGINLABELS = new string[2] { "Tidak memiliki account? Harap", "memilih menu daftar" };
+		mResources.msg = "Pesan";
+		mResources.msgg = new string[2]
 		{
-			gclass104_0 = new GClass104(0);
-			gclass104_1 = new GClass104(1);
-			gclass104_2 = new GClass104(2);
-			gclass104_3 = new GClass104(3);
-			gclass104_4 = new GClass104(4);
-			gclass104_5 = new GClass104(4);
-			gclass104_6 = new GClass104(5);
-			gclass104_7 = new GClass104(6);
-			gclass104_8 = new GClass104(7);
-			gclass104_9 = new GClass104(8);
-			gclass104_10 = new GClass104(9);
-			gclass104_11 = new GClass104(10);
-			gclass104_12 = new GClass104(11);
-			gclass104_13 = gclass104_12;
-			gclass104_14 = new GClass104(12);
-			gclass104_15 = new GClass104(13);
-			gclass104_16 = new GClass104(14);
-			gclass104_17 = new GClass104(15);
-			gclass104_18 = new GClass104(16);
-			gclass104_19 = new GClass104(17);
-			gclass104_20 = new GClass104(18);
-			gclass104_21 = new GClass104(19);
-			gclass104_22 = new GClass104(20);
-			gclass104_23 = new GClass104(21);
-			gclass104_24 = new GClass104(22);
-			gclass104_25 = new GClass104(23);
-			gclass104_26 = new GClass104(24);
-			gclass104_27 = new GClass104(25);
-			gclass104_29 = new GClass104(26);
-			gclass104_30 = new GClass104(27);
-			gclass104_28 = new GClass104(28);
-			gclass104_32 = new GClass104(29);
-			gclass104_31 = new GClass104(30);
-			gclass104_33 = new GClass104(31);
-			gclass104_34 = gclass104_1;
-			gclass104_35 = gclass104_15;
-			gclass104_36 = gclass104_19;
-			gclass104_37 = gclass104_16;
-			gclass104_38 = gclass104_15;
-			gclass104_39 = gclass104_7;
-			gclass104_40 = gclass104_20;
-			gclass104_41 = gclass104_8;
-			int_16 = 1;
-			if (GClass193.int_12 == 1)
-				int_16 = -3;
-		}
-		else
+			"Pesan",
+			""
+		};
+		mResources.no_msg = "Tidak ada pesan";
+		mResources.cancelAccountProtection = "Apakah kamu ingin membatalkan fungsi perlindungan account";
+		mResources.plsCheckAcc = "Harap periksa informasi account dengan baik untuk me-recover account. Jika lupa password\n";
+		mResources.phone = "Nomor HP";
+		mResources.email = "Email";
+		mResources.acc = "Acc";
+		mResources.pwd = "Pwd";
+		mResources.goToWebForPassword = "Untuk me-recover password harap kunjungi website http://ngocrongonline.com/matkhau";
+		mResources.dragon_ball = "Dragon Ball";
+		mResources.character = "Karakter";
+		mResources.account = "Account";
+		mResources.account_server = "Server";
+		mResources.char_name_blank = "Nama karakter tidak dimasukkan";
+		mResources.char_name_short = "Nama karakter terlalu pendek";
+		mResources.char_name_long = "Nama karakter tidak bisa lebih dari 15 huruf";
+		mResources.changeNameChar = "Nama karakter harus diganti";
+		mResources.char_name = "Nama karakter";
+		mResources.login = "Masuk";
+		mResources.login2 = "Masuk";
+		mResources.register = "Daftar";
+		mResources.den = "bergeser ke";
+		mResources.REVENGE = "Balas dendam";
+		mResources.WAIT = "Tunggu";
+		mResources.PLEASEWAIT = "Harap tunggu";
+		mResources.CONNECTING = "Menyambung";
+		mResources.LOGGING = "Logging";
+		mResources.LOADING = "Loading...";
+		mResources.downloading_data = "Downloading ";
+		mResources.select_server = "Pilih server";
+		mResources.pls_restart_game_error = "Error! Harap ulang kembali game.";
+		mResources.pls_restart_game_error2 = "Error!.";
+		mResources.lost_connection = "Koneksi terputus";
+		mResources.check_3G = "Tidak bisa terhubung, harap periksa jaringan GPRS/3G/Wifi";
+		mResources.UPDATE = "Update";
+		mResources.change_zone = "Ubah zona";
+		mResources.select_zone = "Pilih zona";
+		mResources.website = "Website\nforum";
+		mResources.server = "Server";
+		mResources.planet = "Planet";
+		mResources.MENUME = new string[5] { "Inventory", "Kriya", "Potential", "Info", "Perlengkapan" };
+		mResources.MENUNEWCHAR = new string[3]
 		{
-			gclass104_1 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_red.png", "/myfont/tahoma_7b", 0);
-			gclass104_2 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_blue.png", "/myfont/tahoma_7b", 0);
-			gclass104_3 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_white.png", "/myfont/tahoma_7b", 0);
-			gclass104_4 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_yellow.png", "/myfont/tahoma_7b", 0);
-			gclass104_5 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_yellow.png", "/myfont/tahoma_7b", 0);
-			gclass104_6 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_brown.png", "/myfont/tahoma_7b", 0);
-			gclass104_7 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_green2.png", "/myfont/tahoma_7b", 0);
-			gclass104_8 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_green.png", "/myfont/tahoma_7b", 0);
-			gclass104_9 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_focus.png", "/myfont/tahoma_7b", 0);
-			gclass104_10 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7b_unfocus.png", "/myfont/tahoma_7b", 0);
-			gclass104_11 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7.png", "/myfont/tahoma_7", 0);
-			gclass104_12 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_blue1.png", "/myfont/tahoma_7", 0);
-			gclass104_14 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_green2.png", "/myfont/tahoma_7", 0);
-			gclass104_15 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_yellow.png", "/myfont/tahoma_7", 0);
-			gclass104_16 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_grey.png", "/myfont/tahoma_7", 0);
-			gclass104_17 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_red.png", "/myfont/tahoma_7", 0);
-			gclass104_18 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_blue.png", "/myfont/tahoma_7", 0);
-			gclass104_19 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_green.png", "/myfont/tahoma_7", 0);
-			gclass104_20 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_7_white.png", "/myfont/tahoma_7", 0);
-			gclass104_21 = new GClass104(" 0123456789+-*='_?.,<>/[]{}!@#$%^&*():aáàảãạâấầẩẫậăắằẳẵặbcdđeéèẻẽẹêếềểễệfghiíìỉĩịjklmnoóòỏõọôốồổỗộơớờởỡợpqrstuúùủũụưứừửữựvxyýỳỷỹỵzwAÁÀẢÃẠĂẰẮẲẴẶÂẤẦẨẪẬBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỈĨỊJKLMNOÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢPQRSTUÚÙỦŨỤƯỨỪỬỮỰVXYÝỲỶỸỴZW", "/myfont/tahoma_8b.png", "/myfont/tahoma_8b", -1);
-			gclass104_22 = new GClass104(" 0123456789+-", "/myfont/number_yellow.png", "/myfont/number", 0);
-			gclass104_23 = new GClass104(" 0123456789+-", "/myfont/number_red.png", "/myfont/number", 0);
-			gclass104_24 = new GClass104(" 0123456789+-", "/myfont/number_green.png", "/myfont/number", 0);
-			gclass104_25 = new GClass104(" 0123456789+-", "/myfont/number_gray.png", "/myfont/number", 0);
-			gclass104_26 = new GClass104(" 0123456789+-", "/myfont/number_orange.png", "/myfont/number", 0);
-			gclass104_27 = gclass104_23;
-			gclass104_28 = gclass104_3;
-			gclass104_29 = gclass104_22;
-			gclass104_30 = gclass104_24;
-			gclass104_31 = gclass104_26;
-			gclass104_32 = gclass104_12;
-			gclass104_34 = gclass104_17;
-			gclass104_35 = gclass104_15;
-			gclass104_36 = gclass104_19;
-			gclass104_37 = gclass104_16;
-			gclass104_38 = gclass104_15;
-			gclass104_39 = gclass104_7;
-			gclass104_40 = gclass104_20;
-			gclass104_41 = gclass104_8;
-			gclass104_13 = gclass104_12;
-		}
-	}
-
-	public void method_0(int height)
-	{
-		int_18 = height;
-	}
-
-	public Color method_1(int rgb)
-	{
-		int num = rgb & 0xFF;
-		int num2 = (rgb >> 8) & 0xFF;
-		int num3 = (rgb >> 16) & 0xFF;
-		float b = (float)num / 256f;
-		float g = (float)num2 / 256f;
-		return new Color((float)num3 / 256f, g, b);
-	}
-
-	public Color method_2(int id)
-	{
-		return (new Color[7]
+			"",
+			"Planit:",
+			"Rambut:"
+		};
+		mResources.MENUGENDER = new string[3] { "Earth", "Namekian", "Saiyan" };
+		mResources.CHAR_ORDER = new string[10] { "Tantangan", "Praktek", "PK", "Tambah teman", "Undang clan", "Recover", "Informasi", "Chat pribadi", "Undang ke clan", "Blok undangan ke clan" };
+		mResources.mainTab1 = new string[4][]
 		{
-			Color.red,
-			Color.yellow,
-			Color.green,
-			Color.white,
-			method_1(40404),
-			Color.red,
-			Color.black
-		})[id - 25];
-	}
-
-	public void method_3(int ID)
-	{
-		color_0 = method_1(int_17[ID]);
-		color_1 = method_1(int_17[ID]);
-	}
-
-	public void method_4(GClass193 g, string st, int x, int y, int align, sbyte idFont)
-	{
-		sbyte iD = sbyte_0;
-		if (idFont > 0)
-			iD = idFont;
-		x--;
-		if (sbyte_0 > 24)
-		{
-			Color[] array = new Color[6]
+			new string[2]
 			{
-				method_1(6029312),
-				method_1(7169025),
-				method_1(7680),
-				method_1(0),
-				method_1(9264),
-				method_1(6029312)
-			};
-			color_0 = array[sbyte_0 - 25];
-			color_1 = array[sbyte_0 - 25];
-			method_21(g, st, x + 1, y, align);
-			method_21(g, st, x - 1, y, align);
-			method_21(g, st, x, y - 1, align);
-			method_21(g, st, x, y + 1, align);
-			method_21(g, st, x + 1, y + 1, align);
-			method_21(g, st, x + 1, y - 1, align);
-			method_21(g, st, x - 1, y - 1, align);
-			method_21(g, st, x - 1, y + 1, align);
-			color_0 = method_2(sbyte_0);
-			color_1 = method_2(sbyte_0);
-		}
-		else
-			method_3(iD);
-		method_21(g, st, x, y - int_21, align);
-	}
-
-	public Color method_5(sbyte id)
-	{
-		return method_1(int_17[id]);
-	}
-
-	public void method_6(GClass193 g, string st, int x, int y, int align)
-	{
-		if (GClass193.int_12 != 1)
-		{
-			method_4(g, st, x, y, align, 0);
-			return;
-		}
-		int length = st.Length;
-		int num = ((align == 0) ? x : ((align == 1) ? (x - method_17(st)) : (x - (method_17(st) >> 1))));
-		for (int i = 0; i < length; i++)
-		{
-			int num2 = string_0.IndexOf(st[i] + string.Empty);
-			if (num2 == -1)
-				num2 = 0;
-			if (num2 > -1)
+				"Quest",
+				""
+			},
+			new string[2] { "Inven-", "tory" },
+			new string[2]
 			{
-				int x2 = int_15[num2][0];
-				int num3 = int_15[num2][1];
-				int w = int_15[num2][2];
-				int num4 = int_15[num2][3];
-				if (num3 + num4 > gclass20_0.texture2D_0.height)
-				{
-					num3 -= gclass20_0.texture2D_0.height;
-					x2 = gclass20_0.texture2D_0.width / 2;
-				}
-				g.method_23(gclass20_0, x2, num3, w, num4, 0, num, y, 20);
+				"Skill",
+				""
+			},
+			new string[2] { "Func-", "tion" }
+		};
+		mResources.mainTab2 = new string[5][]
+		{
+			new string[2]
+			{
+				"Quest",
+				""
+			},
+			new string[2] { "Inven-", "tory" },
+			new string[2]
+			{
+				"Skill",
+				""
+			},
+			new string[2]
+			{
+				"Clan",
+				""
+			},
+			new string[2] { "Func-", "tion" }
+		};
+		mResources.petMainTab = new string[3][]
+		{
+			new string[2] { "Dis-", "ciple" },
+			new string[2]
+			{
+				"Status",
+				""
+			},
+			new string[2] { "Inven-", "tory" }
+		};
+		mResources.petMainTab2 = new string[2][]
+		{
+			new string[2] { "Dis-", "ciple" },
+			new string[2]
+			{
+				"Status",
+				""
 			}
-			num += int_15[num2][2] + int_14;
-		}
-	}
-
-	public void method_7(GClass193 g, string st, int x, int y, int align)
-	{
-		if (GClass193.int_12 != 1)
-			method_4(g, st, x, y, align, 0);
-		else
-			method_6(g, st, x, y, align);
-	}
-
-	public void method_8(GClass193 g, string st, int x, int y, int align, GClass104 font2)
-	{
-		if (GClass193.int_12 == 1)
-			method_10(g, st, x, y, align, font2);
-		else
-			method_9(g, st, x, y, align, font2);
-	}
-
-	public void method_9(GClass193 g, string st, int x, int y, int align, GClass104 font)
-	{
-		method_4(g, st, x - 1, y - 1, align, font.sbyte_0);
-		method_4(g, st, x - 1, y + 1, align, font.sbyte_0);
-		method_4(g, st, x + 1, y - 1, align, font.sbyte_0);
-		method_4(g, st, x + 1, y + 1, align, font.sbyte_0);
-		method_4(g, st, x, y - 1, align, font.sbyte_0);
-		method_4(g, st, x, y + 1, align, font.sbyte_0);
-		method_4(g, st, x + 1, y, align, font.sbyte_0);
-		method_4(g, st, x - 1, y, align, font.sbyte_0);
-		method_4(g, st, x, y, align, 0);
-	}
-
-	public void method_10(GClass193 g, string st, int x, int y, int align, GClass104 font)
-	{
-		if (GClass193.int_12 == 1)
+		};
+		mResources.key_skill_qwerty = new string[10] { "Tambah\n1", "Tambah\n2", "Tambah\n3", "Tambah\n4", "Tambah\n5", "Tambah\n6", "Tambah\n7", "Tambah\n8", "Tambah\n9", "Tambah\n0" };
+		mResources.key_skill = new string[10]
 		{
-			int length = st.Length;
-			int num = ((align == 0) ? x : ((align == 1) ? (x - method_17(st)) : (x - (method_17(st) >> 1))));
-			for (int i = 0; i < length; i++)
-			{
-				int num2 = string_0.IndexOf(st[i]);
-				if (num2 == -1)
-					num2 = 0;
-				if (num2 > -1)
-				{
-					int x2 = int_15[num2][0];
-					int num3 = int_15[num2][1];
-					int w = int_15[num2][2];
-					int num4 = int_15[num2][3];
-					if (num3 + num4 > gclass20_0.texture2D_0.height)
-					{
-						num3 -= gclass20_0.texture2D_0.height;
-						x2 = gclass20_0.texture2D_0.width / 2;
-					}
-					if (!GClass14.bool_1 && font != null)
-					{
-						g.method_23(font.gclass20_0, x2, num3, w, num4, 0, num + 1, y, 20);
-						g.method_23(font.gclass20_0, x2, num3, w, num4, 0, num, y + 1, 20);
-					}
-					g.method_23(gclass20_0, x2, num3, w, num4, 0, num, y, 20);
-				}
-				num += int_15[num2][2] + int_14;
-			}
-		}
-		else
+			"Tambah\n7",
+			"Tambah\n8",
+			"Tambah\n9",
+			"Tambah\n10",
+			"Tambah\n11",
+			"",
+			"",
+			"",
+			"",
+			""
+		};
+		mResources.SKILL_FAIL = "Teknik seranganmu tidak menambah point";
+		mResources.HP_EMPTY = "Senzu Bean habis. Datang kembali untuk mengambil lagi";
+		mResources.ZONE_HERE = "Kamu sudah di daerah ini";
+		mResources.DES_TASK = new string[5] { "Fenemukan", "di", "untuk menerima quest.", "Kamu telah menyelesaikan semua quest di versi ini", "harap menunggu versi yang akan datang." };
+		mResources.DIES = new string[4] { "Darah habis", "Tunggu", "Kembali ke rumah", "Revive sekarang\n(1 gem)" };
+		mResources.SYNTHESIS = new string[3] { "Peta", "Penca\n-rian", "Clan" };
+		mResources.tips = new string[17]
 		{
-			method_4(g, st, x, y + 1, align, font.sbyte_0);
-			method_4(g, st, x, y, align, 0);
-		}
-	}
-
-	public GClass122 method_11(string src, int lineWidth)
-	{
-		GClass122 gClass = new GClass122();
-		string text = string.Empty;
-		for (int i = 0; i < src.Length; i++)
+			"Minta dari teman clanmu", "Semua skill bisa dipelajari dengan gratis di Kame-Sennin", "Jika kamu mempunya potential points yang cukup", "Kamu tidak bisa terbang atau menggunakan skill jika KI habis", "Serang monster dengan teman clan akan mendapatkan potential points lebih daripada latihan sendiri", "Berlatih bersama teman di zona yang tepat akan memberi potential points lebih daripada menyerang monster", "Saat diupgrade", "Senzu bean akan mengisi lebih banyak HP dan KI", "Log in setiap hari untuk mendapatkan Gem gratis", "Paha ayam akan mengisi HP dan KI sebanyak 100%. Tomat mengisi 100% KI. Wortel mengisi 100% HP.",
+			"Pohon Senzu Bean akan berbuah secara berkala", "meskipun kamu offline", "Jika kamu tidak log in dalam 3 hari", "powermu akan menurun karena kemalasanmu", "Kekuatanmu akan berkurang saat menyerang monster", "tapi akan bertambah jika kamu berhenti", "Kehabisan Gem? Cari NPC Bora"
+		};
+		mResources.TASK_INPUT_CLASS = "Setelah bergabung di kelas, kamu akan menerima quest dari Kepala Sekolah";
+		mResources.SERI_NUM = "Nomor seri";
+		mResources.CARD_CODE = "Kode kartu";
+		mResources.pay_card = "Pay Vina, Mobi, Viettel, VTC";
+		mResources.pay_card2 = "Kartu bayar";
+		mResources.serial_blank = "Harap masukkan nomor seri";
+		mResources.card_code_blank = "Harap masukkan kode kartu";
+		mResources.billion = "bil";
+		mResources.million = "mil";
+		mResources.MENU = "Menu";
+		mResources.CLOSE = "Tutup";
+		mResources.ON = "Pilih";
+		mResources.OFF = "Pilih";
+		mResources.ENABLE = "Nyalakan";
+		mResources.DELETE = "Clear";
+		mResources.VIEW = "Lihat";
+		mResources.CONTINUE = "Lanjut";
+		mResources.NEXTSTEP = "Berikut";
+		mResources.USE = "Pakai";
+		mResources.SORT = "Sortir";
+		mResources.YES = "Ya";
+		mResources.NO = "Tidak";
+		mResources.EXIT = "Keluar";
+		mResources.CHAT = "Chat";
+		mResources.OK = "OK";
+		mResources.retry = "Coba kembali";
+		mResources.uncheck = "Uncheck";
+		mResources.remember = "Ingat";
+		mResources.ACCEPT = "Terima";
+		mResources.CANCEL = "Batal";
+		mResources.SELECT = "Pilih";
+		mResources.enter = "Enter";
+		mResources.open_link = "Buka link";
+		mResources.DOYOUWANTEXIT = "Apakah kamu mau berhenti?";
+		mResources.NEWCHAR = "Karakter baru";
+		mResources.BACK = "Kembali";
+		mResources.LOCKED = "Terkunci";
+		mResources.KILL = "Bunuh";
+		mResources.KILLBOSS = "Bunuh boss";
+		mResources.NOLOCK = "Tidak ada kunci";
+		mResources.XU = "gold";
+		mResources.LUONG = "gem";
+		mResources.RUBY = "ruby";
+		mResources.PK_NOW = "PK Point kamu adalah";
+		mResources.CUU_SAT = "menyerangmu";
+		mResources.NOT_ENOUGH_MP = "Tidak cukup KI";
+		mResources.you_receive = "Kamu menerima";
+		mResources.MONTH = "bulan";
+		mResources.WEEK = "minggu";
+		mResources.DAY = "hari";
+		mResources.HOUR = "jam";
+		mResources.SECOND = "detik";
+		mResources.MINUTE = "menit";
+		mResources.LEARN_SKILL = "Kamu telah mempelajari";
+		mResources.friend = "Teman";
+		mResources.enemy = "Musuh";
+		mResources.no_friend = "Tidak ada teman";
+		mResources.chat_world = "World chat";
+		mResources.change_flag = "Ganti bendera";
+		mResources.option = "Pilihan";
+		mResources.high = "Tinggi";
+		mResources.medium = "Sedang";
+		mResources.low = "Rendah";
+		mResources.increase_vga = "Naikkan resolusi (device kuat)";
+		mResources.decrease_vga = "Turunkan resolusi (device lemah)";
+		mResources.serverchat_off = "Kabar Server";
+		mResources.serverchat_on = "Kabar Server";
+		mResources.aura_on = "Aura khusus";
+		mResources.aura_off = "Aura khusus";
+		mResources.aura_on_2 = "Aura daya";
+		mResources.aura_off_2 = "Aura daya";
+		mResources.hat_on = "Tampilkan aksesoris";
+		mResources.hat_off = "Sembunyikan aksesoris";
+		mResources.x1Screen = "Layar kecil";
+		mResources.x2Screen = "Layar besar";
+		mResources.changeSizeScreen = "Apakah kamu ingin keluar untuk merubah ukuran layar?";
+		mResources.chest = "Peti";
+		mResources.chestt = new string[2]
 		{
-			if (src[i] == '\n' || src[i] == '\b')
-			{
-				gClass.method_0(text);
-				text = string.Empty;
-				continue;
-			}
-			text += src[i];
-			if (method_17(text) > lineWidth)
-			{
-				int num = 0;
-				num = text.Length - 1;
-				while (num >= 0 && text[num] != ' ')
-				{
-					num--;
-				}
-				if (num < 0)
-					num = text.Length - 1;
-				gClass.method_0(text.Substring(0, num));
-				i = i - (text.Length - num) + 1;
-				text = string.Empty;
-			}
-			if (i == src.Length - 1 && !text.Trim().Equals(string.Empty))
-				gClass.method_0(text);
-		}
-		return gClass;
-	}
-
-	public string method_12(string str)
-	{
-		string text = string.Empty;
-		bool flag = false;
-		for (int i = 0; i < str.Length; i++)
+			"Peti",
+			""
+		};
+		mResources.inventory = new string[2] { "Inven-", "taris" };
+		mResources.combine = new string[2] { "mengga-", "bungkan" };
+		mResources.mapp = new string[2]
 		{
-			if (flag)
-			{
-				if (str[i] == ' ')
-					flag = false;
-			}
-			else
-			{
-				string text2 = str.Substring(i);
-				text = (method_16(text2, " ") ? (text + str[i] + "-") : (text + text2));
-				flag = true;
-			}
-		}
-		return text;
-	}
-
-	public string[] method_13(string src, int lineWidth)
-	{
-		ArrayList arrayList = method_14(src, lineWidth);
-		string[] array = new string[arrayList.Count];
-		for (int i = 0; i < arrayList.Count; i++)
+			"Peta",
+			""
+		};
+		mResources.item_give = new string[2] { "membe-", "rikan" };
+		mResources.item_receive = new string[2] { "mene-", "rima" };
+		mResources.zonee = new string[2]
 		{
-			array[i] = (string)arrayList[i];
-		}
-		return array;
-	}
-
-	public ArrayList method_14(string src, int lineWidth)
-	{
-		ArrayList arrayList = new ArrayList();
-		int i = 0;
-		int num = 0;
-		int length = src.Length;
-		if (length >= 5)
+			"Zona",
+			""
+		};
+		mResources.zone = "Zona";
+		mResources.map = "Peta";
+		mResources.item_receive2 = "Terima item";
+		mResources.item = "Item";
+		mResources.give_upper = "Beri";
+		mResources.receive_upper = "Terima";
+		mResources.receive_all = "Terima semua";
+		mResources.no_map = "Tidak ada peta untuk area ini";
+		mResources.go_to_quest = "Pergi ke titik berkedip di peta untuk pencarian";
+		mResources.from_earth = "Hanya untuk Bumi\n";
+		mResources.from_namec = "Hanya untuk Namekian\n";
+		mResources.from_sayda = "Hanya untuk Saiyan\n";
+		mResources.expire = "Expire";
+		mResources.pow_request = "Power dibutuhkan";
+		mResources.your_pow = "Power kamu";
+		mResources.used = "Dipakai";
+		mResources.place = "tempat";
+		mResources.FOREVER = "selamanya";
+		mResources.NOUPGRADE = "Tidak diupgrade";
+		mResources.NOTUPGRADE = "Tidak bisa upgrade";
+		mResources.UPGRADE = "Upgrade";
+		mResources.UPGRADING = "Sedang mengupgrade";
+		mResources.make_shortcut = "Tambahkan\nShort cut";
+		mResources.into_place = "di\ntempat";
+		mResources.move_to_chest = "Pindahkan ke peti";
+		mResources.move_to_chest2 = "Pindahkan ke peti";
+		mResources.press_chat_querty = "Tekan # untuk chat";
+		mResources.press_chat = "Tekan c untuk chat";
+		mResources.saying = "Chat";
+		mResources.miss = "Meleset";
+		mResources.donate = "Sumbang";
+		mResources.receive = "Terima";
+		mResources.press_twice = "Tekan dua kali";
+		mResources.can_harvest = "Bisa memanen";
+		mResources.do_accept_qwerty = "Tekan Y untuk terima (";
+		mResources.do_accept = "Tekan # untuk terima (";
+		mResources.plsRestartGame = "Harap ulangi game";
+		mResources.is_online = "Online";
+		mResources.is_offline = "Offline";
+		mResources.make_friend = "Berteman";
+		mResources.chat_player = "Chat dengan pemain";
+		mResources.chat_with = "Chat dengan";
+		mResources.clan_capsuledonate = "Capsule Donate";
+		mResources.clan_capsuleself = "Personal Capsule";
+		mResources.clan_point = "Clan's Capsule";
+		mResources.give_pea = "Berikan bean";
+		mResources.receive_pea = "Terima bean";
+		mResources.request_pea = "Minta bean";
+		mResources.time = "waktu";
+		mResources.received = "Diterima";
+		mResources.power = "Power";
+		mResources.join_date = "Tanggal bergabung";
+		mResources.clan_leader = "Pemimpin Clan";
+		mResources.clan_coleader = "Wakil pemimpin clan";
+		mResources.power_point = "Power points";
+		mResources.member = "Anggota";
+		mResources.memberr = new string[2]
 		{
-			string text = string.Empty;
-			try
-			{
-				while (true)
-				{
-					if (method_19(text) < lineWidth)
-					{
-						text += src[num];
-						num++;
-						if (src[num] != '\n')
-						{
-							if (num < length - 1)
-								continue;
-							num = length - 1;
-						}
-					}
-					if (num != length - 1 && src[num + 1] != ' ')
-					{
-						int num2 = num;
-						while (src[num + 1] != '\n' && (src[num + 1] != ' ' || src[num] == ' ') && num != i)
-						{
-							num--;
-						}
-						if (num == i)
-							num = num2;
-					}
-					string text2 = src.Substring(i, num + 1 - i);
-					if (text2[0] == '\n')
-						text2 = text2.Substring(1, text2.Length - 1);
-					if (text2[text2.Length - 1] == '\n')
-						text2 = text2.Substring(0, text2.Length - 1);
-					arrayList.Add(text2);
-					if (num == length - 1)
-						break;
-					for (i = num + 1; i != length - 1 && src[i] == ' '; i++)
-					{
-					}
-					if (i != length - 1)
-					{
-						num = i;
-						text = string.Empty;
-						continue;
-					}
-					return arrayList;
-				}
-				return arrayList;
-			}
-			catch (Exception ex)
-			{
-				GClass92.smethod_5("EXCEPTION WHEN REAL SPLIT " + src + "\nend=" + num + "\n" + ex.Message + "\n" + ex.StackTrace);
-				arrayList.Add(src);
-				return arrayList;
-			}
-		}
-		arrayList.Add(src);
-		return arrayList;
-	}
-
-	public string[] method_15(string src, int lineWidth)
-	{
-		GClass122 gClass = method_11(src, lineWidth);
-		string[] array = new string[gClass.method_2()];
-		for (int i = 0; i < gClass.method_2(); i++)
+			"Anggota",
+			""
+		};
+		mResources.chatClan = new string[2] { "Chat", "clan" };
+		mResources.leaveClan = new string[2] { "Menin-", "ggalkan" };
+		mResources.createClan = new string[2] { "Memb-", "uat" };
+		mResources.findClan = new string[2] { "Mene-", "mukan" };
+		mResources.khau_hieuu = new string[1] { "Slogan" };
+		mResources.bieu_tuongg = new string[1] { "Icon" };
+		mResources.request_pea2 = new string[2] { "Permintaan", "kacang" };
+		mResources.level = "Level";
+		mResources.clan_birthday = "Ulang tahun clan";
+		mResources.clan_list = "Daftar clan";
+		mResources.create = "Buat";
+		mResources.find = "Cari";
+		mResources.leave = "Pergi";
+		mResources.not_join_clan = "Tidak bergabung dengan clan";
+		mResources.clanEmpty = new string[5] { "Kamulah satu-satunya", "anggota klan ini", "Seseorang bisa meminta untuk bergabung", "Kamu bisa memilih pemain lain", "untuk mengundang mereka ke clan" };
+		mResources.input_clan_name = "Masukkan nama clan";
+		mResources.clan_name = "Nama clan";
+		mResources.chat_clan = "Chat clan";
+		mResources.input_clan_name_to_create = "Masukkan nama clan yang ingin kamu buat";
+		mResources.input_clan_slogan = "Masukkan slogan clan";
+		mResources.do_u_want_join_clan = "Apakah kamu ingin bergabung dengan clan?";
+		mResources.select_clan_icon = "Pilih icon clan";
+		mResources.request_join_clan = "Permintaan bergabung ke clan";
+		mResources.view_clan_member = "Lihat anggota clan";
+		mResources.create_clan_co_leader = "Memerintah wakil pemimpin\n";
+		mResources.create_clan_leader = "Memerintah pemimpin\n";
+		mResources.disable_clan_mastership = "Bubarkan";
+		mResources.kick_clan_mem = "Keluarkan anggota";
+		mResources.clan_name_blank = "Harap masukkan nama clan";
+		mResources.clan_slogan_blank = "Harap masukkan slogan clan";
+		mResources.cannot_find_clan = "Tidak bisa menemukan clan";
+		mResources.ago = "lalu";
+		mResources.findingClan = "Mencari clan";
+		mResources.trade = "Bertukar";
+		mResources.not_lock_trade = "Tidak mengunci transaksi";
+		mResources.not_lock_trade_upper = "Transaksi tidak terkunci";
+		mResources.locked_trade = "Transaksi terkunci";
+		mResources.locked_trade_upper = "Transaksi dikunci";
+		mResources.lock_trade = "Kunci transaksi";
+		mResources.wait_opp_lock_trade = "Menunggu lawan mengunci transaksi";
+		mResources.press_done = "Tekan 'Selesai'";
+		mResources.THROW = "Lempar";
+		mResources.SPLIT = "Bagi";
+		mResources.done = "Selesai";
+		mResources.opponent = "Lawan";
+		mResources.you = "Kamu";
+		mResources.mlock = "Kunci";
+		mResources.money_trade = "Jumlah Transaksi";
+		mResources.GETOUT = "Keluar";
+		mResources.MOVEOUT = "Tinggalkan";
+		mResources.GETOUTMONEY = "Tarik gold";
+		mResources.GETINMONEY = "Deposit gold";
+		mResources.SENDMONEY = "Transfer gold";
+		mResources.GETIN = "Deposit";
+		mResources.SALE = "Jual";
+		mResources.SALES = "Jual banyak";
+		mResources.SALEALL = "Jual semua";
+		mResources.BUY = "Beli";
+		mResources.BUYS = "Beli banyak";
+		mResources.input_money_to_trade = "Masukkan uang untuk bertransaksi";
+		mResources.input_money = "Masukkan uang";
+		mResources.input_money_wrong = "Jumlah salah, harap ulang kembali";
+		mResources.not_enough_money = "Uang tidak cukup, harap ulang kembali";
+		mResources.input_quantity_to_trade = "Masukkan jumlah yang hendak ditukarkan";
+		mResources.input_quantity = "Masukkan jumlah";
+		mResources.input_quantity_wrong = "Jumlah salah, harap ulang kembali";
+		mResources.already_has_item = "Kamu telah memiliki item ini";
+		mResources.unlock_item_to_trade = "Harap diunlock sebelum bertukar item ini";
+		mResources.root = "Dasar";
+		mResources.need = "butuh";
+		mResources.need_upper = "Butuh";
+		mResources.free = "Bebas";
+		mResources.free1 = "Gratis";
+		mResources.free2 = "";
+		mResources.select_item = "Pilih item";
+		mResources.random = "Acak";
+		mResources.say_hello = "Halo!";
+		mResources.say_wat_do_u_want_to_buy = "Apa yang ingin kamu beli?";
+		mResources.say_wat_do_u_want_to_buy2 = "Apa yang ingin kamu pelajari?";
+		mResources.do_u_sure_to_trade = "Apakah kamu yakin ingin bertukar dengan item ini?";
+		mResources.learn_with = "Belajar dengan";
+		mResources.buy_with = "Beli dengan";
+		mResources.can_not_do_when_die = "Kamu tidak bisa melakukan ini saat mati";
+		mResources.use_for_combine = "Gunakan untuk kombinasi";
+		mResources.use_for_trade = "Gunakan untuk bertukar";
+		mResources.not_enough_luong_world_channel = "Tidak cukup gem untuk chat di world channel";
+		mResources.world_channel_5_luong = "Chat di world channel (5 gem)";
+		mResources.want_to_trade = "ingin bertukar dengan kamu, terima?";
+		mResources.hasJustUpgrade1 = "Kamu baru saja mengupgrade";
+		mResources.hasJustUpgrade2 = "ke";
+		mResources.potential_to_learn = "potential untuk Whis untuk belajar";
+		mResources.potential_point = "Potential points";
+		mResources.achievement_point = " Achievement point ";
+		mResources.increase = "bertambah";
+		mResources.increase_upper = "Bertambah";
+		mResources.not_enough_potential_point1 = "Kamu hanya memiliki";
+		mResources.not_enough_potential_point2 = "potential points. Mari latihan lagi untuk mendapatkannya.";
+		mResources.use_potential_point_for1 = "Apakah kamu ingin menggunakan";
+		mResources.use_potential_point_for2 = "potential pts untuk ditambahkan";
+		mResources.for_HP = "untuk HP?";
+		mResources.for_KI = "untuk KI?";
+		mResources.for_hit_point = "untuk serangan?";
+		mResources.for_armor = "untuk armor?";
+		mResources.for_crit = "untuk critical?";
+		mResources.can_buy_from_Uron1 = "Saat kamu punya";
+		mResources.can_buy_from_Uron2 = "potential points, kamu bisa meng-upgrade dengan gratis";
+		mResources.can_buy_from_Uron3 = "Disamping itu kamu bisa membeli resep di Uron untuk belajar dengan cepat";
+		mResources.HP = "HP";
+		mResources.KI = "KI";
+		mResources.hit_point = "Serang";
+		mResources.armor = "Armor";
+		mResources.vitality = "Vitality";
+		mResources.critical = "Critical";
+		mResources.cap_do = "Level";
+		mResources.KI_consume = "Pemakaian KI:";
+		mResources.cooldown = "Tenang";
+		mResources.milisecond = "milidetik";
+		mResources.max_level_reach = "Level maksimum tercapai";
+		mResources.next_level_require = "Level berikut dibutuhkan";
+		mResources.potential = "potential";
+		mResources.not_learn = "Belum dipelajari";
+		mResources.learn_require = "Butuh";
+		mResources.learn = "Belajar";
+		mResources.to_gain_20hp = "untuk mendapatkan 20 HP";
+		mResources.to_gain_20mp = "untuk mendapatkan 20 MP";
+		mResources.to_gain_1pow = "untuk mendapatkan 1 power point";
+		mResources.hairStyleName = new string[3][]
 		{
-			array[i] = (string)gClass.method_3(i);
-		}
-		return array;
-	}
-
-	public bool method_16(string strSource, string str)
-	{
-		int num = 0;
-		while (true)
-		{
-			if (num < strSource.Length)
-			{
-				if ((string.Empty + strSource[num]).Equals(str))
-					break;
-				num++;
-				continue;
-			}
-			return false;
-		}
-		return true;
-	}
-
-	public int method_17(string s)
-	{
-		if (GClass193.int_12 == 1)
-		{
-			int num = 0;
-			for (int i = 0; i < s.Length; i++)
-			{
-				int num2 = string_0.IndexOf(s[i]);
-				if (num2 == -1)
-					num2 = 0;
-				num += int_15[num2][2] + int_14;
-			}
-			return num;
-		}
-		return method_18(s);
-	}
-
-	public int method_18(string s)
-	{
-		try
-		{
-			GUIStyle gUIStyle = new GUIStyle();
-			gUIStyle.font = font_0;
-			return (int)gUIStyle.CalcSize(new GUIContent(s)).x / GClass193.int_12;
-		}
-		catch (Exception ex)
-		{
-			GClass92.smethod_2("GET WIDTH OF " + s + " FAIL.\n" + ex.Message + "\n" + ex.StackTrace);
-			return method_19(s);
-		}
-	}
-
-	public int method_19(string s)
-	{
-		return s.Length * int_19 / GClass193.int_12;
-	}
-
-	public int method_20()
-	{
-		if (GClass193.int_12 == 1)
-			return int_18;
-		if (int_18 <= 0)
-		{
-			GUIStyle gUIStyle = new GUIStyle();
-			gUIStyle.font = font_0;
-			try
-			{
-				int_18 = (int)gUIStyle.CalcSize(new GUIContent("Adg")).y + 2;
-			}
-			catch (Exception ex)
-			{
-				GClass92.smethod_2("FAIL GET HEIGHT " + ex.StackTrace);
-				int_18 = 20;
-			}
-			return int_18 / GClass193.int_12;
-		}
-		return int_18 / GClass193.int_12;
-	}
-
-	public void method_21(GClass193 g, string st, int x0, int y0, int align)
-	{
-		y0 += int_16;
-		GUIStyle gUIStyle = new GUIStyle(GUI.skin.label);
-		gUIStyle.font = font_0;
-		float num = 0f;
-		float num2 = 0f;
-		switch (align)
-		{
-		case 0:
-			num = x0;
-			num2 = y0;
-			gUIStyle.alignment = TextAnchor.UpperLeft;
-			break;
-		case 1:
-			num = x0 - GClass14.int_10;
-			num2 = y0;
-			gUIStyle.alignment = TextAnchor.UpperRight;
-			break;
-		case 2:
-		case 3:
-			num = x0 - GClass14.int_10 / 2;
-			num2 = y0;
-			gUIStyle.alignment = TextAnchor.UpperCenter;
-			break;
-		}
-		gUIStyle.normal.textColor = color_0;
-		g.method_19(st, (int)num, (int)num2, gUIStyle);
-	}
-
-	public static string[] smethod_1(string _text, string _searchStr)
-	{
-		int num = 0;
-		int num2 = 0;
-		int length = _searchStr.Length;
-		int num3 = _text.IndexOf(_searchStr, 0);
-		while (num3 != -1)
-		{
-			num3 = _text.IndexOf(_searchStr, num3 + length);
-			num++;
-		}
-		string[] array = new string[num + 1];
-		int num4 = _text.IndexOf(_searchStr);
-		int num5 = 0;
-		int num6 = 0;
-		while (num4 != -1)
-		{
-			array[num6] = _text.Substring(num5, num4 - num5);
-			num5 = num4 + length;
-			num4 = _text.IndexOf(_searchStr, num5);
-			num6++;
-		}
-		array[num6] = _text.Substring(num5, _text.Length - num5);
-		return array;
-	}
-
-	public void method_22()
-	{
-		if (GClass193.int_12 == 1)
-			gclass20_0 = GClass14.smethod_43(string_4);
-	}
-
-	public void method_23()
-	{
+			new string[3] { "Gohan", "Krillin", "Yamcha" },
+			new string[3] { "Dende", "Piccolo", "Kami" },
+			new string[3] { "Vegeta", "Raditz", "Kakarot" }
+		};
+		mResources.hp_ki_full = "HP dan KI penuh, tidak perlu menggunakan bean";
+		mResources.quest_place = "Tempat quest";
+		mResources.no_mission = "Kamu tidak memiliki quest.";
+		mResources.reward_mission = "Hadiah karena selesai";
+		mResources.achievement_mission = "Quest achievement";
+		mResources.trangbi = "Perlengkapan";
+		mResources.wat_do_u_want = "Apa yang ingin kamu lakukan";
+		mResources.off = "Pilih";
+		mResources.on = "Pilih";
+		mResources.select_map = "Pilih tujuanmu";
+		mResources.offPlease = "OK untuk menonaktifkan Dunia Saluran";
+		mResources.onPlease = "OK untuk menyalakan world channel";
+		mResources.playNew = "Game baru";
+		mResources.playAcc = "Account bermain";
+		mResources.not_register_yet = "Tidak mendaftar belum";
 	}
 }

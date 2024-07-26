@@ -2,18 +2,27 @@ public class GClass29
 {
 	public int int_0;
 
-	public GClass21[] gclass21_0;
+	public int int_1;
 
-	public GClass29(int type)
+	public int int_2;
+
+	public int int_3;
+
+	public int int_4;
+
+	public int int_5;
+
+	public GClass29(int xEnd, int yEnd, int act, int dir)
 	{
-		int_0 = type;
-		if (type == 0)
-			gclass21_0 = new GClass21[3];
-		if (type == 1)
-			gclass21_0 = new GClass21[17];
-		if (type == 2)
-			gclass21_0 = new GClass21[14];
-		if (type == 3)
-			gclass21_0 = new GClass21[2];
+		int_0 = xEnd;
+		int_1 = yEnd;
+		int_2 = dir;
+		int_5 = act;
+	}
+
+	public GClass29(int xEnd, int yEnd)
+	{
+		int_0 = xEnd;
+		int_1 = yEnd;
 	}
 }
