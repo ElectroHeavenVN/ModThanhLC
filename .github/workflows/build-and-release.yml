@@ -27,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.action_ref }}
+          name: Output
           path: Output
       - name: Nén artifact
         run: Compress-Archive -Path Output -DestinationPath "DragonBall.Pro.2.3.7.${{ github.ref_name }}.zip"
@@ -38,5 +38,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ github.ref_name }}-GHA
           draft: false
-          prerelease: false
+          prerelease: true
           tag_name: ${{ github.ref_name }}-GHA
+          body: Bản phát hành này được tự động tạo từ mã nguồn bằng GitHub Actions. Nếu bản phát hành này ở trạng thái Prelease (màu cam), điều đó có nghĩa là đây là phiên bản thử nghiệm chưa được kiểm tra. Sử dụng phiên bản này có thể gây ra lỗi không mong muốn. Hãy chắc chắn rằng bạn đã sao lưu dữ liệu trước khi sử dụng phiên bản này.
