@@ -180,9 +180,9 @@ namespace DragonBoyManager
             account.process = new Process();
             account.process.StartInfo.FileName = "Dragon ball_237b.exe";
             if (account.isUseProxy && Options[1] == "T")
-                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username.Trim()} --password {account.Password.Trim()} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --proxy {account.ProxyInfo.Trim()} --size {account.SizeScreen.Trim()} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
+                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username.Trim()} --password {account.Password.Trim()} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy} --proxy {account.ProxyInfo.Trim()} --size {account.SizeScreen.Trim()} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
             else
-                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username} --password {account.Password} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy.ToString()} --size {account.SizeScreen} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
+                account.process.StartInfo.Arguments = $"--ID {account.ID} --username {account.Username} --password {account.Password} --server {account.Server.ToString().ToLower().Replace(" ", "")} --options {Options[0] + "|" + Options[1] + "|" + Options[2] + "|" + Options[3]} --isUseProxy {account.isUseProxy} --size {account.SizeScreen} --uuid {"username:" + CheckInfo.t1 + "," + CheckInfo.t.Trim()}";
             account.process.Start();
             SocketServer.waitingAccounts.Add(account);
             while (account.process.MainWindowHandle == IntPtr.Zero)

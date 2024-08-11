@@ -17,5 +17,6 @@ Hướng dẫn sử dụng được lưu tại thư mục [`Files`](Output/Files
 - Người chia sẻ file gốc, 500k của bạn đã được tiêu xài một cách hợp lý!
 
 ---
+__Bạn có thắc mắc hay gặp phải vấn đề? Hãy cho mình biết! Bạn có thể tạo issue tại đây hoặc yêu cầu trợ giúp trong [Server Discord](https://discord.gg/ekMDKCa5jQ).__
 
 `NƠI ĐÂY ĐÉO PHẢI THIÊN ĐÌNH, XIN ĐỪNG ẢO TƯỞNG MÌNH LÀ THƯỢNG ĐẾ!!!` - ThanhLC
