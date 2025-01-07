@@ -1,3 +1,5 @@
+# This project has been abandoned. You should use [TLCActivator](https://github.com/ElectroHeavenVN/TLCActivator) instead.
+---
 # ModThanhLC [[EN](./README_EN.md) | VI]
 Mã nguồn Quản lý tài khoản và Game đã giải mã của `Dragon Ball Pro 2.3.7`, phiên bản `2.0`.
 ## Tải xuống
