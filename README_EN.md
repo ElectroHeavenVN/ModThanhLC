@@ -1,3 +1,5 @@
+# This project has been abandoned. You should use [TLCActivator](https://github.com/ElectroHeavenVN/TLCActivator) instead.
+---
 # ModThanhLC [EN | [VI](./README.md)]
 Decrypted and reconstructed source code of `Dragon Ball Pro 2.3.7`, version `2.0`.
 ## Download
